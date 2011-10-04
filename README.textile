@@ -1,0 +1,3 @@
+bq. Enhance your open Web video experience. WebM Plus will let you save WebM videos, and make YouTube behave like Adobe Flash was just a bad dream.
+
+Get the "latest version":https://addons.opera.com/en/addons/extensions/details/youtube-webm-plus/ from Opera’s add-on site.
