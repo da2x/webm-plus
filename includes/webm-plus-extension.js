@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', function()
     if (widget.preferences.continueTesting == 'true') oexWMPbetaApplicant();
   }
   if (widget.preferences.videoSaveButton == 'true') oexWMPsaveButton();
-  if (widget.preferences.limitSearch == 'true') oexWMPlimitSearchResults();
+  if (widget.preferences.filterSearch == 'true') oexWMPfilterSearchResults();
   if (widget.preferences.hideFlashPromo == 'true') oexWMPremoveElement('flash10-promo-div');
   if (widget.preferences.hideFlashUpgrade == 'true') setTimeout((function() { oexWMPremoveElement('flash-upgrade'); }), 275);
   if (widget.preferences.preventFlash == 'true') oexWMPremoveElement('movie_player');
@@ -82,7 +82,7 @@ function oexWMPremoveElement(id)
   if (e != null) e.parentNode.removeChild(ad);
 }
 
-function oexWMPlimitSearchResults()
+function oexWMPfilterSearchResults()
 {
   var p, sf = document.getElementById('masthead-search');
   if (sf != null) {

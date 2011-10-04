@@ -20,8 +20,8 @@
             <label for="videoSaveButton">Add a ‘Download Video’ button below all WebM videos</label>
           </div>
           <div>
-            <input type="checkbox" id="limitSearch" />
-            <label for="limitSearch">Filter search result to WebM videos only</label>
+            <input type="checkbox" id="filterSearch" />
+            <label for="filterSearch">Filter search result to WebM videos only</label>
           </div>
         </fieldset>
         <fieldset>
@@ -50,7 +50,7 @@ var continueTesting = document.getElementById('continueTesting'),
   videoSaveButton = document.getElementById('videoSaveButton'),
   hideFlashPromo = document.getElementById('hideFlashPromo'),
   hideFlashUpgrade = document.getElementById('hideFlashUpgrade'),
-  limitSearch = document.getElementById('limitSearch'),
+  filterSearch = document.getElementById('filterSearch'),
   preventFlash = document.getElementById('preventFlash');
 
 continueTesting.addEventListener('change', function() {
@@ -59,8 +59,8 @@ continueTesting.addEventListener('change', function() {
 videoSaveButton.addEventListener('change', function() {
   widget.preferences.videoSaveButton = ((this.checked) ? 'true' : 'false');
 }, false );
-limitSearch.addEventListener('change', function() {
-  widget.preferences.limitSearch = ((this.checked) ? 'true' : 'false');
+filterSearch.addEventListener('change', function() {
+  widget.preferences.filterSearch = ((this.checked) ? 'true' : 'false');
 }, false );
 hideFlashPromo.addEventListener('change', function() {
   widget.preferences.hideFlashPromo = ((this.checked) ? 'true' : 'false');
@@ -83,7 +83,7 @@ preventFlash.addEventListener('change', function() {
 
 if (widget.preferences.continueTesting) continueTesting.checked = ((widget.preferences.continueTesting == 'true') ? true : false);
 if (widget.preferences.videoSaveButton) videoSaveButton.checked = ((widget.preferences.videoSaveButton == 'true') ? true : false);
-if (widget.preferences.limitSearch) limitSearch.checked = ((widget.preferences.limitSearch == 'true') ? true : false);
+if (widget.preferences.filterSearch) filterSearch.checked = ((widget.preferences.filterSearch == 'true') ? true : false);
 if (widget.preferences.hideFlashPromo) hideFlashPromo.checked = ((widget.preferences.hideFlashPromo == 'true') ? true : false);
 if (widget.preferences.hideFlashUpgrade)
 {

@@ -8,7 +8,7 @@
   <icon src="gfx/favicon.png" height="16" width="16" />
   <preference name="continueTesting" value="true" />
   <preference name="videoSaveButton" value="true" />
-  <preference name="limitSearch" value="false" />
+  <preference name="filterSearch" value="false" />
   <preference name="hideFlashPromo" value="true" />
   <preference name="hideFlashUpgrade" value="false" />
   <preference name="preventFlash" value="false" />
