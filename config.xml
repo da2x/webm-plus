@@ -4,5 +4,6 @@
   <description>Enhance your open-Web video experience. WebM Plus will let you save WebM videos, and make YouTube behave like Adobe Flash was just a bad dream.</description>
   <author href="http://daniel.priv.no/">Daniel Aleksandersen</author>
   <license href="http://www.opensource.org/licenses/mit-license.php">Licensed under the MIT license. Attribution encouraged.</license>
-  <icon src="icon.png" height="64" width="64"/>
+  <icon src="icon.png" height="64" width="64" />
+  <icon src="gfx/favicon.png" height="16" width="16" />
 </widget>
