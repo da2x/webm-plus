@@ -16,7 +16,6 @@ window.addEventListener('DOMContentLoaded', function()
   if (widget.preferences.hideFlashPromo == 'true') oexWMPremoveElement('flash10-promo-div');
   if (widget.preferences.hideFlashUpgrade == 'true') setTimeout((function() { oexWMPremoveElement('flash-upgrade'); }), 275);
   if (widget.preferences.preventFlash == 'true') oexWMPremoveElement('movie_player');
-  }
 }, false);
 
 var oexWMPbcv = 'f2=40000000',
@@ -33,7 +32,7 @@ function oexWMPbetaApplicant()
   var d = new Date(),
     ed = (new Date(d.getTime()+(20908800000))).toUTCString(), // eight months
     cv = oexWMPcookieTester('PREF',false,true);
-  if (cv != undefined || cv != oexWMPbfc)
+  if (cv != false && cv != undefined && cv != oexWMPbfc)
   {
     cv = cv.substring(5).replace(/&f2=[0-9]{0,9}|f2=[0-9]{0,9}&|&f2=[0-9]{0,9}/i,'');
     document.cookie = oexWMPbfc + '; expires=Thu, 01-Jan-1970 00:00:01 UTC; ;';
