@@ -9,44 +9,44 @@ var oexYouTubeWebMPlus = function()
 {
   window.addEventListener('DOMContentLoaded', function()
   {
-    if (!oexWMPbetaParticipant())
+    if (!betaParticipant())
     {
-      if (widget.preferences.continueTesting == 'true') oexWMPbetaApplicant();
+      if (widget.preferences.continueTesting == 'true') betaApplicant();
     }
-    if (widget.preferences.videoSaveButton == 'true') oexWMPsaveButton();
-    if (widget.preferences.filterSearch == 'true') oexWMPfilterSearchResults();
-    if (widget.preferences.hideFlashPromo == 'true') oexWMPremoveElement('flash10-promo-div');
-    if (widget.preferences.hideFlashUpgrade == 'true') setTimeout((function() { oexWMPremoveElement('flash-upgrade'); }), 275);
-    if (widget.preferences.preventFlash == 'true') oexWMPremoveElement('movie_player');
+    if (widget.preferences.videoSaveButton == 'true') downloadVideoButton();
+    if (widget.preferences.filterSearch == 'true') filterSearchResults();
+    if (widget.preferences.hideFlashPromo == 'true') removeElement('flash10-promo-div');
+    if (widget.preferences.hideFlashUpgrade == 'true') setTimeout((function() { removeElement('flash-upgrade'); }), 275);
+    if (widget.preferences.preventFlash == 'true') removeElement('movie_player');
   }, false);
 
-  var oexWMPbcv = 'f2=40000000',
-    oexWMPbfc = 'PREF=' + oexWMPbcv;
+  var trialCookieValue = 'f2=40000000',
+    trialCookie = 'PREF=' + trialCookieValue;
 
-  function oexWMPbetaParticipant()
+  function betaParticipant()
   {
-    setTimeout(t = oexWMPcookieTester('PREF',oexWMPbcv),1000);
+    setTimeout(t = cookieTester('PREF',trialCookieValue),1000);
     return t;
   }
 
-  function oexWMPbetaApplicant ()
+  function betaApplicant ()
   {
     var d = new Date(),
       ed = (new Date(d.getTime()+(20908800000))).toUTCString(), // eight months
-      cv = oexWMPcookieTester('PREF',false,true);
-    if (cv != false && cv != undefined && cv != oexWMPbfc)
+      cv = cookieTester('PREF',false,true);
+    if (cv != false && cv != undefined && cv != trialCookie)
     {
       cv = cv.substring(5).replace(/&f2=[0-9]{0,9}|f2=[0-9]{0,9}&|&f2=[0-9]{0,9}/i,'');
-      document.cookie = oexWMPbfc + '; expires=Thu, 01-Jan-1970 00:00:01 UTC; ;';
-      document.cookie = oexWMPbfc + '&' + cv + '; path=/; domain=.youtube.com; ' +  'expires=' + ed;
+      document.cookie = trialCookie + '; expires=Thu, 01-Jan-1970 00:00:01 UTC; ;';
+      document.cookie = trialCookie + '&' + cv + '; path=/; domain=.youtube.com; ' +  'expires=' + ed;
     }
     else
     {
-      document.cookie = oexWMPbfc + '; path=/; domain=.youtube.com; ' +  'expires=' + ed;
+      document.cookie = trialCookie + '; path=/; domain=.youtube.com; ' +  'expires=' + ed;
     }
   }
 
-  function oexWMPcookieTester(ic,iv,rv)
+  function cookieTester(ic,iv,rv)
   {
     var i, jar = document.cookie.split(';');
     for(i=0;i < jar.length;i++)
@@ -60,7 +60,7 @@ var oexYouTubeWebMPlus = function()
     return false;
   }
 
-  function oexWMPsaveButton()
+  function downloadVideoButton()
   {
     var v = document.getElementsByTagName('video'),
     c = document.getElementById('watch-actions-right'),
@@ -78,13 +78,13 @@ var oexYouTubeWebMPlus = function()
     };
   }
 
-  function oexWMPremoveElement(id)
+  function removeElement(id)
   {
     var e = document.getElementById(id);
     if (e != null) e.parentNode.removeChild(e);
   }
 
-  function oexWMPfilterSearchResults()
+  function filterSearchResults()
   {
     var p, sf = document.getElementById('masthead-search');
     if (sf != null) {
