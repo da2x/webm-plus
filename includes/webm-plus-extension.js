@@ -78,7 +78,7 @@ function oexWMPsaveButton() {
 function oexWMPremoveElement(id)
 {
   var e = document.getElementById(id);
-  if (e != null) e.parentNode.removeChild(id);
+  if (e != null) e.parentNode.removeChild(e);
 }
 
 function oexWMPfilterSearchResults()
