@@ -9,9 +9,9 @@ var oexYouTubeWebMPlus = function()
 {
   window.addEventListener('DOMContentLoaded', function()
   {
-    if (!betaParticipant())
+    if (!trialParticipant())
     {
-      if (widget.preferences.continueTesting == 'true') betaApplicant();
+      if (widget.preferences.continueTesting == 'true') trialApplicant();
     }
     if (widget.preferences.videoSaveButton == 'true') downloadVideoButton();
     if (widget.preferences.filterSearch == 'true') filterSearchResults();
@@ -23,13 +23,13 @@ var oexYouTubeWebMPlus = function()
   var trialCookieValue = 'f2=40000000',
     trialCookie = 'PREF=' + trialCookieValue;
 
-  function betaParticipant()
+  function trialParticipant()
   {
     setTimeout(t = cookieTester('PREF',trialCookieValue),1000);
     return t;
   }
 
-  function betaApplicant ()
+  function trialApplicant ()
   {
     var d = new Date(),
       ed = (new Date(d.getTime()+(20908800000))).toUTCString(), // eight months
