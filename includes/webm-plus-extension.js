@@ -29,7 +29,7 @@ var oexYouTubeWebMPlus = function()
     return t;
   }
 
-  function trialApplicant ()
+  function trialApplicant()
   {
     var d = new Date(),
       ed = (new Date(d.getTime()+(20908800000))).toUTCString(), // eight months
