@@ -9,15 +9,12 @@ var oexYouTubeWebMPlus = function()
 {
   window.addEventListener('DOMContentLoaded', function()
   {
-    if (!trialParticipant())
-    {
-      if (widget.preferences.continueTesting == 'true') trialApplicant();
-    }
+    if (!trialParticipant() && (widget.preferences.continueTesting == 'true')) trialApplicant();
     if (widget.preferences.videoSaveButton == 'true') downloadVideoButton();
     if (widget.preferences.filterSearch == 'true') filterSearchResults();
-    if (widget.preferences.hideFlashPromo == 'true') removeElement('flash10-promo-div');
-    if (widget.preferences.hideFlashUpgrade == 'true') setTimeout((function() { removeElement('flash-upgrade'); }), 275);
-    if (widget.preferences.preventFlash == 'true') removeElement('movie_player');
+    if (widget.preferences.hideFlashPromo == 'true') removeElementById('flash10-promo-div');
+    if (widget.preferences.hideFlashUpgrade == 'true') setTimeout((function() { removeElementById('flash-upgrade'); }), 275);
+    if (widget.preferences.preventFlash == 'true') removeElementById('movie_player');
   }, false);
 
   var trialCookieValue = 'f2=40000000',
@@ -25,73 +22,71 @@ var oexYouTubeWebMPlus = function()
 
   function trialParticipant()
   {
-    setTimeout(t = cookieTester('PREF',trialCookieValue),1000);
-    return t;
+    var test;
+    setTimeout(test = cookieTester('PREF',trialCookieValue),1000);
+    return test;
   }
 
   function trialApplicant()
   {
-    var d = new Date(),
-      ed = (new Date(d.getTime()+(20908800000))).toUTCString(), // eight months
-      cv = cookieTester('PREF',false,true);
-    if (cv != false && cv != undefined && cv != trialCookie)
+    var date = new Date(),
+      expirationDate = (new Date(date.getTime()+(20908800000))).toUTCString(), // eight months
+      cookieValue = cookieTester('PREF',false,true);
+    if (cookieValue != false && cookieValue != undefined && cookieValue != trialCookie)
     {
-      cv = cv.substring(5).replace(/&f2=[0-9]{0,9}|f2=[0-9]{0,9}&|&f2=[0-9]{0,9}/i,'');
+      cookieValue = cookieValue.substring(5).replace(/&f2=[0-9]{0,9}|f2=[0-9]{0,9}&|&f2=[0-9]{0,9}/i,'');
       document.cookie = trialCookie + '; expires=Thu, 01-Jan-1970 00:00:01 UTC; ;';
-      document.cookie = trialCookie + '&' + cv + '; path=/; domain=.youtube.com; ' +  'expires=' + ed;
+      document.cookie = trialCookie + '&' + cookieValue + '; path=/; domain=.youtube.com; ' +  'expires=' + expirationDate;
     }
     else
     {
-      document.cookie = trialCookie + '; path=/; domain=.youtube.com; ' +  'expires=' + ed;
-    }
-  }
+      document.cookie = trialCookie + '; path=/; domain=.youtube.com; ' +  'expires=' + expirationDate;
+  }}
 
-  function cookieTester(ic,iv,rv)
+  function cookieTester(inCookie,inValue,returnValue)
   {
-    var i, jar = document.cookie.split(';');
-    for(i=0;i < jar.length;i++)
+    var i, cookieJar = document.cookie.split(';');
+    for(i=0;i < cookieJar.length;i++)
     {
-      var c = jar[i];
-      while (c.charAt(0) == ' ') c = c.substring(1,c.length);
-      if (c.indexOf(ic + '=') == 0 && iv == null) return true;
-      else if ((c.indexOf(ic + '=') == 0) && rv != null) return c;
-      else if ((c.indexOf(ic + '=') == 0) && (c.substring(ic + '='.length,c.length).indexOf(iv) >= 0) && rv == null) return true;
+      var cookie = cookieJar[i];
+      while (cookie.charAt(0) == ' ') cookie = cookie.substring(1,cookie.length);
+      if (cookie.indexOf(inCookie + '=') == 0 && inValue == null) return true;
+      else if ((cookie.indexOf(inCookie + '=') == 0) && returnValue != null) return cookie;
+      else if ((cookie.indexOf(inCookie + '=') == 0) && (cookie.substring(inCookie + '='.length,cookie.length).indexOf(inValue) >= 0) && returnValue == null) return true;
     }
     return false;
   }
 
   function downloadVideoButton()
   {
-    var v = document.getElementsByTagName('video'),
-    c = document.getElementById('watch-actions-right'),
-    b = document.createElement('button');
-    if (v.length > 0 && c != undefined)
+    var text, video = document.getElementsByTagName('video'),
+    container = document.getElementById('watch-actions-right'),
+    button = document.createElement('button');
+    if (video.length > 0 && container != undefined)
     {
-      b.setAttribute('class', 'yt-uix-button yt-uix-tooltip yt-uix-tooltip-reverse');
-      b.style.position = 'relative';
-      b.style.top = '-4px';
-      b.setAttribute('data-tooltip-text', 'Click, then press Ctrl+S to save.');
-      b.onclick = function() { window.location = v[0].src; }
-      t = document.createTextNode('Download Video');
-      b.appendChild(t)
-      c.appendChild(b);
-    };
-  }
+      button.setAttribute('class', 'yt-uix-button yt-uix-tooltip yt-uix-tooltip-reverse');
+      button.style.position = 'relative';
+      button.style.top = '-4px';
+      button.setAttribute('data-tooltip-text', 'Click, then press Ctrl+S to save.');
+      button.onclick = function() { window.location = video[0].src; }
+      text = document.createTextNode('Download Video');
+      button.appendChild(text)
+      container.appendChild(button);
+  }}
 
-  function removeElement(id)
+  function removeElementById(id)
   {
-    var e = document.getElementById(id);
-    if (e != null) e.parentNode.removeChild(e);
+    var element = document.getElementById(id);
+    if (element != null) element.parentNode.removeChild(element);
   }
 
   function filterSearchResults()
   {
-    var p, sf = document.getElementById('masthead-search');
-    if (sf != null) {
-      p = document.createElement('input');
-      p.setAttribute('name', 'webm');
-      p.setAttribute('type', 'hidden');
-      p.setAttribute('value', '1');
-      sf.appendChild(p);
-  }}
-}();
+    var parameter, searchField = document.getElementById('masthead-search');
+    if (searchField != null) {
+      parameter = document.createElement('input');
+      parameter.setAttribute('name', 'webm');
+      parameter.setAttribute('type', 'hidden');
+      parameter.setAttribute('value', '1');
+      searchField.appendChild(parameter);
+}}}();
