@@ -37,7 +37,7 @@ var oexYouTubeWebMPlus = function()
       cookieValue = cookieValue.substring(5).replace(/&f2=[0-9]{0,9}|f2=[0-9]{0,9}&|f2=[0-9]{0,9}/i,'');
       cookieValue = cookieValue.substring(5).replace(/&f3=[0-9]{0,9}|f3=[0-9]{0,9}&|f3=[0-9]{0,9}/i,'');
       document.cookie = trialCookie + '; expires=Thu, 01-Jan-1970 00:00:01 UTC; ;';
-      document.cookie = trialCookie + '&' + cookieValue + '; path=/; domain=.youtube.com; ' + 'expires=' + expirationDate;
+      setTimeout((function() { document.cookie = trialCookie + '&' + cookieValue + '; path=/; domain=.youtube.com; ' + 'expires=' + expirationDate; }), 750);
     }
     else
     {
