@@ -34,13 +34,14 @@ var oexYouTubeWebMPlus = function()
       cookieValue = cookieTester('PREF',false,true);
     if (cookieValue != false && cookieValue != undefined && cookieValue != trialCookie)
     {
-      cookieValue = cookieValue.substring(5).replace(/&f2=[0-9]{0,9}|f2=[0-9]{0,9}&|&f2=[0-9]{0,9}/i,'');
+      cookieValue = cookieValue.substring(5).replace(/&f2=[0-9]{0,9}|f2=[0-9]{0,9}&|f2=[0-9]{0,9}/i,'');
+      cookieValue = cookieValue.substring(5).replace(/&f3=[0-9]{0,9}|f3=[0-9]{0,9}&|f3=[0-9]{0,9}/i,'');
       document.cookie = trialCookie + '; expires=Thu, 01-Jan-1970 00:00:01 UTC; ;';
-      document.cookie = trialCookie + '&' + cookieValue + '; path=/; domain=.youtube.com; ' +  'expires=' + expirationDate;
+      document.cookie = trialCookie + '&' + cookieValue + '; path=/; domain=.youtube.com; ' + 'expires=' + expirationDate;
     }
     else
     {
-      document.cookie = trialCookie + '; path=/; domain=.youtube.com; ' +  'expires=' + expirationDate;
+      document.cookie = trialCookie + '; path=/; domain=.youtube.com; ' + 'expires=' + expirationDate;
   }}
 
   function cookieTester(inCookie,inValue,returnValue)
