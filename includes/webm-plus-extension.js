@@ -17,6 +17,15 @@ var oexYouTubeWebMPlus = function()
     if (widget.preferences.preventFlash == 'true') removeElementById('movie_player');
   }, false);
 
+  function _(string)
+  {
+    if (typeof(oexWebMPlusi18n) != 'undefined' && oexWebMPlusi18n[string])
+    {
+      return oexWebMPlusi18n[string];
+    }
+    return string;
+  }
+
   var trialCookieValue = 'f2=40000000',
     trialCookie = 'PREF=' + trialCookieValue;
 
@@ -70,9 +79,9 @@ var oexYouTubeWebMPlus = function()
       button.setAttribute('class', 'yt-uix-button yt-uix-tooltip yt-uix-tooltip-reverse');
       button.style.position = 'relative';
       button.style.top = '-4px';
-      button.setAttribute('data-tooltip-text', 'Click, then press Ctrl+S to save.');
+      button.setAttribute('data-tooltip-text', _('Click, then press Ctrl+S to save.'));
       button.onclick = function() { window.location = video[0].src; }
-      text = document.createTextNode('Download Video');
+      text = document.createTextNode(_('Download Video'));
       button.appendChild(text)
       container.appendChild(button);
   }}
