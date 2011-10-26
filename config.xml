@@ -2,8 +2,12 @@
 <widget xmlns="http://www.w3.org/ns/widgets" id="https://github.com/zcode/webm-plus" version="3.0-3" xml:lang="en">
   <name short="WebM Plus">YouTube WebM Plus</name>
   <description>Enhance your open Web video experience. WebM Plus will let you save WebM videos, and make YouTube behave like Adobe Flash was just a bad dream.</description>
+  <description xml:lang="ru">Ощути преимущества открытого видео формата для Веб. С помощью этого расширения YouTube забудет об Adobe Flash навсегда. WebM Plus так же позволяет легко сохранять видео в формате WebM на диск.</description>
+  <description xml:lang="ua">Відчуй переваги відкритого відео формату для Веб. За допомогою цього розширення, YouTube забуде про Adobe Flash назавжди. WebM Plus також дозволяє легко завантажувати відео у форматі WebM на диск.</description>
   <author href="http://daniel.priv.no/">Daniel Aleksandersen</author>
   <license href="http://www.opensource.org/licenses/mit-license.php">Licensed under the MIT license. Attribution encouraged.</license>
+  <license href="http://www.opensource.org/licenses/mit-license.php" xml:lang="ru">Распространяется по лицензии MIT. Участие в проекте приветствуется.</license>
+  <license href="http://www.opensource.org/licenses/mit-license.php" xml:lang="ua">Розповсюджується за ліцензією MIT. Участь у проекті заохочується.</license>
   <icon src="icon.png" height="64" width="64" />
   <icon src="gfx/favicon.png" height="16" width="16" />
   <preference name="continueTesting" value="true" />
