@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Налаштування YouTube WebM</title>
+    <link href="gfx/favicon.png" rel="icon" />
+    <link href="gfx/options-page.css" rel="stylesheet" media="all"></style>
+  </head>
+  <body>
+    <section>
+      <h1>Налаштування YouTube WebM Plus</h1>
+      <form>
+        <fieldset>
+          <div>
+            <input type="checkbox" id="continueTesting"/>
+            <label for="continueTesting">Автоматично приєднатися до тестової програми YouTube HTML5</label>
+          </div>
+          <div>
+            <input type="checkbox" id="videoSaveButton"/>
+            <label for="videoSaveButton">Додати кнопку "Завантажити відео" до всіх WebM роликів</label>
+          </div>
+          <div>
+            <input type="checkbox" id="filterSearch" />
+            <label for="filterSearch">Обмежити результати пошуку роликами у форматі WebM</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div>
+            <input type="checkbox" id="hideFlashPromo"/>
+            <label for="hideFlashPromo">Сховати пропозиції щодо завантаження плагіну Adobe Flash</label></label>
+          </div>
+          <div>
+            <input type="checkbox" id="hideFlashUpgrade"/>
+            <label for="hideFlashUpgrade">Не нагадувати про оновлення Adobe Flash</label></label>
+          </div>
+          <div>
+            <input type="checkbox" id="preventFlash" />
+            <label for="preventFlash">Не програвати навіть ті ролики, що доступні лише у форматі Adobe Flash</label>
+          </div>
+        </fieldset>
+        <div>
+          <div>
+          <input type="button" value="Done" onclick="window.close();" />
+          </div>
+        </div>
+      </form>
+    </section>
+    <script>
+var continueTesting = document.getElementById('continueTesting'),
+  videoSaveButton = document.getElementById('videoSaveButton'),
+  hideFlashPromo = document.getElementById('hideFlashPromo'),
+  hideFlashUpgrade = document.getElementById('hideFlashUpgrade'),
+  filterSearch = document.getElementById('filterSearch'),
+  preventFlash = document.getElementById('preventFlash');
+
+continueTesting.addEventListener('change', function() {
+  widget.preferences.continueTesting = ((this.checked) ? 'true' : 'false');
+}, false );
+videoSaveButton.addEventListener('change', function() {
+  widget.preferences.videoSaveButton = ((this.checked) ? 'true' : 'false');
+}, false );
+filterSearch.addEventListener('change', function() {
+  widget.preferences.filterSearch = ((this.checked) ? 'true' : 'false');
+}, false );
+hideFlashPromo.addEventListener('change', function() {
+  widget.preferences.hideFlashPromo = ((this.checked) ? 'true' : 'false');
+}, false );
+hideFlashUpgrade.addEventListener('change', function() {
+  widget.preferences.hideFlashUpgrade = ((this.checked) ? 'true' : 'false');
+}, false );
+preventFlash.addEventListener('change', function() {
+  widget.preferences.preventFlash = ((this.checked) ? 'true' : 'false');
+  if (this.checked)
+  {
+    hideFlashUpgrade.checked = true;
+    hideFlashUpgrade.disabled = true;
+    widget.preferences.hideFlashUpgrade = 'true';
+  }
+  else {
+    hideFlashUpgrade.disabled = false;
+  }
+}, false );
+
+if (widget.preferences.continueTesting) continueTesting.checked = ((widget.preferences.continueTesting == 'true') ? true : false);
+if (widget.preferences.videoSaveButton) videoSaveButton.checked = ((widget.preferences.videoSaveButton == 'true') ? true : false);
+if (widget.preferences.filterSearch) filterSearch.checked = ((widget.preferences.filterSearch == 'true') ? true : false);
+if (widget.preferences.hideFlashPromo) hideFlashPromo.checked = ((widget.preferences.hideFlashPromo == 'true') ? true : false);
+if (widget.preferences.hideFlashUpgrade)
+{
+  hideFlashUpgrade.checked = ((widget.preferences.hideFlashUpgrade == 'true') ? true : false);
+  hideFlashUpgrade.disabled  = ((widget.preferences.preventFlash == 'true') ? true : false)
+}
+if (widget.preferences.preventFlash) preventFlash.checked = ((widget.preferences.preventFlash == 'true') ? true : false);
+    </script>
+  </body>
+</html>
