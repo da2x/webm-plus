@@ -6,5 +6,5 @@ var i18n = {
   'hideFlashPromo': 'Скрыть предложения о скачивании плагина Adobe Flash',
   'hideFlashUpgrade': 'Скрыть напоминания об обновлении Adobe Flash',
   'preventFlash': 'Не проигрывать даже те ролики, которые доступны только в формате Adobe Flash',
-  'Done': 'Done'
+  'Done': 'Готово'
 };
