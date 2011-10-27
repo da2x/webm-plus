@@ -7,12 +7,28 @@ function _(string)
   return string;
 }
 
+function labelStringByOptionId(id)
+{
+  var string = null;
+  switch (id)
+  {
+    case 'continueTesting': string = 'Rejoin the YouTube HTML5 Trial automatically'; break;
+    case 'videoSaveButton': string = 'Add a ‘Download Video’ button below all WebM videos'; break;
+    case 'filterSearch': string = 'Filter search result to WebM videos only'; break;
+    case 'hideFlashPromo': string = 'Hide promotions for Adobe Flash'; break;
+    case 'hideFlashUpgrade': string = 'Hide upgrade warnings for Adobe Flash'; break;
+    case 'preventFlash': string = 'Prevent all video playback using the Adobe Flash plug-in'; break;
+  }
+  return string;
+}
+
 function addOptionToPage(id)
 {
   var option = document.createElement('div'),
   checkbox = document.createElement('input'),
   label = document.createElement('label'),
-  string = document.createTextNode(_(id));
+  i18nstring = _(labelStringByOptionId(id)),
+  string = document.createTextNode(i18nstring);
   checkbox.setAttribute('type', 'checkbox');
   checkbox.setAttribute('id', id);
   option.appendChild(checkbox);
