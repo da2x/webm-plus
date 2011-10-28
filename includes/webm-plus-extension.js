@@ -39,8 +39,9 @@ var oexYouTubeWebMPlus = function()
   function trialApplicant()
   {
     var date = new Date(),
-      expirationDate = (new Date(date.getTime()+(20908800000))).toUTCString(), // eight months
-      cookieValue = cookieTester('PREF',false,true);
+    expirationDate = (new Date(date.getTime()+(20908800000))).toUTCString(), // eight months
+    cookieValue = cookieTester('PREF',false,true),
+    isVideoPage = window.location.pathname.indexOf('/watch');
     if (cookieValue != false && cookieValue != undefined && cookieValue != trialCookie)
     {
       cookieValue = cookieValue.substring(5).replace(/&f2=[0-9]{0,9}|f2=[0-9]{0,9}&|f2=[0-9]{0,9}/i,'');
@@ -52,7 +53,7 @@ var oexYouTubeWebMPlus = function()
     {
       document.cookie = trialCookie + '; path=/; domain=.youtube.com; ' + 'expires=' + expirationDate;
     }
-    if (!~window.location.pathname.indexOf('/watch')) setTimeout((window.location = window.location.href), 1000);
+    if (~isVideoPage) setTimeout((window.location = window.location.href), 1000);
   }
 
   function cookieTester(inCookie,inValue,returnValue)
@@ -64,7 +65,7 @@ var oexYouTubeWebMPlus = function()
       while (cookie.charAt(0) == ' ') cookie = cookie.substring(1,cookie.length);
       if (cookie.indexOf(inCookie + '=') == 0 && inValue == null) return true;
       else if ((cookie.indexOf(inCookie + '=') == 0) && returnValue != null) return cookie;
-      else if ((cookie.indexOf(inCookie + '=') == 0) && (!~cookie.substring(inCookie + '='.length,cookie.length).indexOf(inValue)) && returnValue == null) return true;
+      else if ((cookie.indexOf(inCookie + '=') == 0) && (!~(cookie.substring(inCookie + '='.length,cookie.length).indexOf(inValue))) && returnValue == null) return true;
     }
     return false;
   }
