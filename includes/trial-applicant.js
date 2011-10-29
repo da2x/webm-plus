@@ -30,6 +30,7 @@
         else if (form.querySelector("input[name='disable_html5']"))
         {
           continueTesting();
+          opera.extension.postMessage('testCandidate');
       }}
       else opera.postError('HTML5 Trial Applicant form not found.');
   }}
