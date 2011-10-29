@@ -32,7 +32,7 @@
           continueTesting();
           opera.extension.postMessage('testCandidate');
       }}
-      else opera.postError('HTML5 Trial Applicant form not found.');
+      else opera.extension.postMessage('discontinuedTesting');
   }}
 
   function formSubmitter()
