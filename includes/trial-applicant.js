@@ -6,20 +6,6 @@
 // ==/UserScript==
 
 (function() {
-
-  opera.extension.onmessage = function(event)
-  {
-    var message  = event.data;
-    if (message === 'testCandidate')
-    {
-      alert('sucess');
-    }
-    else {
-      opera.postError("background process sent: " + message);
-      var reply = "background process's message only had " + (message ? message.length : 0) + " characters.";
-      event.source.postMessage(reply);
-  }};
-
   window.addEventListener('DOMContentLoaded', function()
   {
     submitFormWithSessionToken();
@@ -42,7 +28,6 @@
       else if (form.querySelector("input[name='disable_html5']"))
       {
         continueTesting();
-        opera.extension.postMessage('testCandidate');
     }}
     else opera.postError('HTML5 Trial Applicant form not found.');
   }
