@@ -15,22 +15,24 @@
 
   function submitFormWithSessionToken()
   {
-    if (form)
+    if (widget.preferences.continueTesting == 'true')
     {
-      if (form.querySelector("input[name='enable_html5']"))
+      if (form)
       {
-        if (!form.querySelector("input[name='session_token']"))
+        if (form.querySelector("input[name='enable_html5']"))
         {
-          form.addEventListener('DOMNodeInserted', formSubmitter, false);
+          if (!form.querySelector("input[name='session_token']"))
+          {
+           form.addEventListener('DOMNodeInserted', formSubmitter, false);
+          }
+          else formSubmitter();
         }
-        else formSubmitter();
-      }
-      else if (form.querySelector("input[name='disable_html5']"))
-      {
-        continueTesting();
-    }}
-    else opera.postError('HTML5 Trial Applicant form not found.');
-  }
+        else if (form.querySelector("input[name='disable_html5']"))
+        {
+          continueTesting();
+      }}
+      else opera.postError('HTML5 Trial Applicant form not found.');
+  }}
 
   function formSubmitter()
   {
