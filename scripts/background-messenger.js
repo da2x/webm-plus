@@ -6,8 +6,8 @@
     opera.extension.onmessage = function(event)
     {
       var message = event.data;
-      if (message === 'goodHtml5VideoStatus') broadcastGoodStatus();
-      if (message === 'requestHtml5VideoStatus' && !html5VideoStatus) replyTestHtml5VideoStatus(event);
+      if (message === 'requestHtml5VideoStatus' && !html5VideoStatus) replyTestStatus(event);
+      else if (message === 'goodHtml5VideoStatus') broadcastGoodStatus();
   }}, false);
 
   function broadcastGoodStatus()
@@ -16,7 +16,7 @@
     opera.extension.broadcastMessage('goodHtml5VideoStatus');
   }
 
-  function replyTestHtml5VideoStatus(event)
+  function replyTestStatus(event)
   {
     event.source.postMessage('testHtml5VideoStatus');
 }}());
