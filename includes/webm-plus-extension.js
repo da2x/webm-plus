@@ -13,7 +13,6 @@ var oexYouTubeWebMPlus = function()
 {
   window.addEventListener('DOMContentLoaded', function()
   {
-    if (!trialParticipant() && (widget.preferences.getItem('continueTesting') === 'true')) trialApplicant();
     if (widget.preferences.getItem('videoSaveButton') === 'true') downloadVideoButton();
     if (widget.preferences.getItem('filterSearch') === 'true') filterSearchResults();
     if (widget.preferences.getItem('hideFlashPromo') === 'true') removeElementById('flash10-promo-div');
@@ -28,50 +27,6 @@ var oexYouTubeWebMPlus = function()
       return oexWebMPlusi18n[string];
     }
     return string;
-  }
-
-  var trialCookieValue = 'f2=40000000',
-    trialCookie = 'PREF=' + trialCookieValue;
-
-  function trialParticipant()
-  {
-    var test;
-    setTimeout(test = cookieTester('PREF',trialCookieValue),1000);
-    return test;
-  }
-
-  function trialApplicant()
-  {
-    var date = new Date(),
-    expirationDate = (new Date(date.getTime()+(20908800000))).toUTCString(), // eight months
-    cookieValue = cookieTester('PREF',false,true),
-    isVideoPage = window.location.pathname.indexOf('/watch');
-    if (cookieValue != false && cookieValue != undefined && cookieValue != trialCookie)
-    {
-      cookieValue = cookieValue.substring(5).replace(/&f2=[0-9]{0,9}|f2=[0-9]{0,9}&|f2=[0-9]{0,9}/i,'');
-      cookieValue = cookieValue.substring(5).replace(/&f3=[0-9]{0,9}|f3=[0-9]{0,9}&|f3=[0-9]{0,9}/i,'');
-      document.cookie = trialCookie + '; expires=Thu, 01-Jan-1970 00:00:01 UTC; ;';
-      setTimeout((function() { document.cookie = trialCookie + '&' + cookieValue + '; path=/; domain=.youtube.com; ' + 'expires=' + expirationDate; }), 750);
-    }
-    else
-    {
-      document.cookie = trialCookie + '; path=/; domain=.youtube.com; ' + 'expires=' + expirationDate;
-    }
-    if (~isVideoPage) setTimeout((window.location = window.location.href), 1000);
-  }
-
-  function cookieTester(inCookie,inValue,returnValue)
-  {
-    var i, cookieJar = document.cookie.split(';');
-    for(i=0;i < cookieJar.length;i++)
-    {
-      var cookie = cookieJar[i];
-      while (cookie.charAt(0) == ' ') cookie = cookie.substring(1,cookie.length);
-      if (cookie.indexOf(inCookie + '=') == 0 && inValue == null) return true;
-      else if ((cookie.indexOf(inCookie + '=') == 0) && returnValue != null) return cookie;
-      else if ((cookie.indexOf(inCookie + '=') == 0) && (!~(cookie.substring(inCookie + '='.length,cookie.length).indexOf(inValue))) && returnValue == null) return true;
-    }
-    return false;
   }
 
   function downloadVideoButton()
