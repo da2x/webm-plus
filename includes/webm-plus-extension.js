@@ -82,7 +82,7 @@
   function loadHtml5VideoTestFrame()
   {
     requestedhtml5status = true;
-    if (!isHtml5VideoPlayer() && !embedded)
+    if (!isHtml5VideoPlayer() && !embedded && widget.preferences.getItem('neverReload') === 'false')
     {
       var frame = document.createElement('iframe');
       frame.style.height = '1px';

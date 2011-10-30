@@ -15,6 +15,7 @@
   <preference name="continueTesting" value="true" />
   <preference name="videoSaveButton" value="true" />
   <preference name="filterSearch" value="false" />
+  <preference name="neverReload" value="false" />
   <preference name="hideFlashPromo" value="true" />
   <preference name="hideFlashUpgrade" value="false" />
   <preference name="preventFlash" value="false" />

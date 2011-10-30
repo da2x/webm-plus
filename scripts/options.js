@@ -10,6 +10,7 @@
     addOption('continueTesting');
     addOption('videoSaveButton');
     addOption('filterSearch');
+    addOption('neverReload');
     addOption('hideFlashPromo');
     addOption('hideFlashUpgrade');
     addOption('preventFlash');
@@ -34,6 +35,7 @@
       case 'continueTesting': string = 'Rejoin the YouTube HTML5 Trial automatically'; break;
       case 'videoSaveButton': string = 'Add a ‘Download Video’ button below all WebM videos'; break;
       case 'filterSearch': string = 'Filter search result to WebM videos only'; break;
+      case 'neverReload': string = 'Never reload any embedded- or video pages'; break;
       case 'hideFlashPromo': string = 'Hide promotions for Adobe Flash'; break;
       case 'hideFlashUpgrade': string = 'Hide upgrade warnings for Adobe Flash'; break;
       case 'preventFlash': string = 'Prevent all video playback using the Adobe Flash plug-in'; break;
