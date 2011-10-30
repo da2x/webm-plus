@@ -1,8 +1,12 @@
 // ==UserScript==
 // @include http://youtube.com/*
-// @include https://youtube.com/*
 // @include http://*.youtube.com/*
+// @include https://youtube.com/*
 // @include https://*.youtube.com/*
+// @exclude http://youtube.com/html5
+// @exclude http://*.youtube.com/html5
+// @exclude https://youtube.com/html5
+// @exclude https://*.youtube.com/html5
 // ==/UserScript==
 
 var oexYouTubeWebMPlus = function()
