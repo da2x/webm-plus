@@ -10,7 +10,9 @@
 // ==/UserScript==
 
 (function() {
-  var requestedHtml5VideoStatus = false,
+  var requestedhtml5status = false,
+  html5player = false,
+  videopage = (window.location.pathname.indexOf('/watch') === 0),
   embedded = (window.location.pathname.indexOf('/embed/') === 0);
 
   window.addEventListener('load', function()
@@ -18,7 +20,7 @@
     opera.extension.postMessage('requestHtml5VideoStatus');
     opera.extension.onmessage = function(event)
     {
-      if (event.data === 'testHtml5VideoStatus' && !requestedHtml5VideoStatus)
+      if (event.data === 'testHtml5VideoStatus' && !requestedhtml5status)
       {
         loadHtml5VideoTestFrame();
       }
@@ -32,11 +34,14 @@
   {
     if (!embedded)
     {
-      if (widget.preferences.getItem('videoSaveButton') === 'true') downloadVideoButton();
       if (widget.preferences.getItem('filterSearch') === 'true') filterSearchResults();
-      if (widget.preferences.getItem('hideFlashPromo') === 'true') removeElementById('flash10-promo-div');
-      if (widget.preferences.getItem('hideFlashUpgrade') === 'true') setTimeout((function() { removeElementById('flash-upgrade'); }), 350);
-      if (widget.preferences.getItem('preventFlash') === 'true') removeElementById('movie_player');
+      if (videopage)
+      {
+        if (widget.preferences.getItem('videoSaveButton') === 'true') downloadVideoButton();
+        if (widget.preferences.getItem('hideFlashPromo') === 'true') removeElementById('flash10-promo-div');
+        if (widget.preferences.getItem('hideFlashUpgrade') === 'true') setTimeout((function() { removeElementById('flash-upgrade'); }), 350);
+        if (widget.preferences.getItem('preventFlash') === 'true') removeElementById('movie_player');
+      }
     }
   }, false);
 
@@ -49,27 +54,31 @@
     return string;
   }
 
-  function loadHtml5VideoTestFrame()
+  function isHtml5VideoPlayer()
   {
-    var isHtml5VideoPlayer = false;
-    requestedHtml5VideoStatus = true;
-    if (!embedded)
+    if (videopage)
     {
       var isHtml5VideoPlayer, videoPlayer = document.getElementById('watch-player');
       if (videoPlayer != null)
       {
-        if (videoPlayer.class === 'html5-player') isHtml5VideoPlayer = true;
+        if (videoPlayer.class === 'html5-player') html5player = true;
       }
     }
-    else
+    else if (embedded)
     {
       var isHtml5VideoPlayer, videoPlayer = document.getElementById('video-player');
       if (videoPlayer != null)
       {
-        if (videoPlayer.class === 'html5-video-player') isHtml5VideoPlayer = true;
+        if (videoPlayer.class === 'html5-video-player') html5player = true;
       }
     }
-    if (!isHtml5VideoPlayer)
+    else html5player = false;
+  }
+
+  function loadHtml5VideoTestFrame()
+  {
+    requestedhtml5status = true;
+    if (!isHtml5VideoPlayer() && !embedded)
     {
       var frame = document.createElement('iframe');
       frame.style.height = '1px';
@@ -81,9 +90,7 @@
 
   function reloadVideoPage()
   {
-    var videoPage = window.location.pathname.indexOf('/watch'),
-    html5Videos = document.getElementsByTagName('video').length;
-    if ((videoPage === 0 || embedded) && html5Videos === 0)
+    if ((videopage || embedded) && !isHtml5VideoPlayer())
     {
       window.location = window.location.href;
   }}
