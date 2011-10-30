@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" id="https://github.com/zcode/webm-plus" version="3.0-3" xml:lang="en">
+<widget xmlns="http://www.w3.org/ns/widgets" id="https://github.com/zcode/webm-plus" version="3.10-2" xml:lang="en">
   <name short="WebM Plus">YouTube WebM Plus</name>
   <description>Enhance your open Web video experience. WebM Plus will let you save WebM videos, and make YouTube behave like Adobe Flash was just a bad dream.</description>
   <description xml:lang="nb">Forbedre din videoopplevelse på nettet. WebM Plus lar deg lagre WebM videoer, og får YouTube til å oppføre seg som Adobe Flash bare var en dårlig drøm.</description>
