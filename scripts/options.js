@@ -103,5 +103,4 @@
     addOptionToPage(id);
     saveOptionOnChange(id);
     setOptionState(id);
-  }
-}());
+}}());
