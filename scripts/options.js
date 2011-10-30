@@ -1,4 +1,22 @@
 (function() {
+  window.addEventListener('DOMContentLoaded', function()
+  {
+    document.title = _('%widgetname options');
+
+    var heading = document.getElementsByTagName('h1')[0],
+    title = document.createTextNode(_('%widgetname options'));
+    heading.appendChild(title);
+
+    addOption('continueTesting');
+    addOption('videoSaveButton');
+    addOption('filterSearch');
+    addOption('hideFlashPromo');
+    addOption('hideFlashUpgrade');
+    addOption('preventFlash');
+
+    document.getElementById('buttonOk').setAttribute('value', _('Done'));
+  }, false);
+
   function _(string)
   {
     if (typeof(i18n) != 'undefined' && i18n[string])
@@ -86,22 +104,4 @@
     saveOptionOnChange(id);
     setOptionState(id);
   }
-
-  window.addEventListener('DOMContentLoaded', function()
-  {
-    document.title = _('%widgetname options');
-
-    var heading = document.getElementsByTagName('h1')[0],
-    title = document.createTextNode(_('%widgetname options'));
-    heading.appendChild(title);
-
-    addOption('continueTesting');
-    addOption('videoSaveButton');
-    addOption('filterSearch');
-    addOption('hideFlashPromo');
-    addOption('hideFlashUpgrade');
-    addOption('preventFlash');
-
-    document.getElementById('buttonOk').setAttribute('value', _('Done'));
-  }, false);
 }());
