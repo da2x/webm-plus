@@ -9,7 +9,7 @@
 // @exclude https://*.youtube.com/html5
 // ==/UserScript==
 
-var oexYouTubeWebMPlus = function()
+(function() {
 {
   var requestedHtml5VideoStatus = false;
 
@@ -105,4 +105,4 @@ var oexYouTubeWebMPlus = function()
       parameter.setAttribute('type', 'hidden');
       parameter.setAttribute('value', '1');
       searchField.appendChild(parameter);
-}}}();
+}}}}());
