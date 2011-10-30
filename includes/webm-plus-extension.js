@@ -10,7 +10,8 @@
 // ==/UserScript==
 
 (function() {
-  var requestedHtml5VideoStatus = false;
+  var requestedHtml5VideoStatus = false,
+  embedded = (window.location.pathname.indexOf('/embed/') === 0);
 
   window.addEventListener('load', function()
   {
@@ -29,11 +30,14 @@
 
   window.addEventListener('DOMContentLoaded', function()
   {
-    if (widget.preferences.getItem('videoSaveButton') === 'true') downloadVideoButton();
-    if (widget.preferences.getItem('filterSearch') === 'true') filterSearchResults();
-    if (widget.preferences.getItem('hideFlashPromo') === 'true') removeElementById('flash10-promo-div');
-    if (widget.preferences.getItem('hideFlashUpgrade') === 'true') setTimeout((function() { removeElementById('flash-upgrade'); }), 350);
-    if (widget.preferences.getItem('preventFlash') === 'true') removeElementById('movie_player');
+    if (!embedded)
+    {
+      if (widget.preferences.getItem('videoSaveButton') === 'true') downloadVideoButton();
+      if (widget.preferences.getItem('filterSearch') === 'true') filterSearchResults();
+      if (widget.preferences.getItem('hideFlashPromo') === 'true') removeElementById('flash10-promo-div');
+      if (widget.preferences.getItem('hideFlashUpgrade') === 'true') setTimeout((function() { removeElementById('flash-upgrade'); }), 350);
+      if (widget.preferences.getItem('preventFlash') === 'true') removeElementById('movie_player');
+    }
   }, false);
 
   function _(string)
@@ -47,11 +51,23 @@
 
   function loadHtml5VideoTestFrame()
   {
+    var isHtml5VideoPlayer = false;
     requestedHtml5VideoStatus = true;
-    var isHtml5VideoPlayer, videoPlayer = document.getElementById('watch-player');
-    if (videoPlayer != null)
+    if (!embedded)
     {
-      if (videoPlayer.class === 'html5-player') isHtml5VideoPlayer = true;
+      var isHtml5VideoPlayer, videoPlayer = document.getElementById('watch-player');
+      if (videoPlayer != null)
+      {
+        if (videoPlayer.class === 'html5-player') isHtml5VideoPlayer = true;
+      }
+    }
+    else
+    {
+      var isHtml5VideoPlayer, videoPlayer = document.getElementById('video-player');
+      if (videoPlayer != null)
+      {
+        if (videoPlayer.class === 'html5-video-player') isHtml5VideoPlayer = true;
+      }
     }
     if (!isHtml5VideoPlayer)
     {
@@ -67,7 +83,7 @@
   {
     var videoPage = window.location.pathname.indexOf('/watch'),
     html5Videos = document.getElementsByTagName('video').length;
-    if (videoPage === 0 && html5Videos === 0)
+    if ((videoPage === 0 || embedded) && html5Videos === 0)
     {
       window.location = window.location.href;
   }}
