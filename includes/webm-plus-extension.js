@@ -11,6 +11,23 @@
 
 var oexYouTubeWebMPlus = function()
 {
+  var requestedHtml5VideoStatus = false;
+
+  window.addEventListener('load', function()
+  {
+    opera.extension.postMessage('requestHtml5VideoStatus');
+    opera.extension.onmessage = function(event)
+    {
+      if (event.data === 'testHtml5VideoStatus' && !requestedHtml5VideoStatus)
+      {
+        loadHtml5VideoTestFrame();
+      }
+      if (event.data === 'goodHtml5VideoStatus')
+      {
+        reloadVideoPage(event.data);
+      }
+  }}, false);
+
   window.addEventListener('DOMContentLoaded', function()
   {
     if (widget.preferences.getItem('videoSaveButton') === 'true') downloadVideoButton();
@@ -28,6 +45,33 @@ var oexYouTubeWebMPlus = function()
     }
     return string;
   }
+
+  function loadHtml5VideoTestFrame()
+  {
+    requestedHtml5VideoStatus = true;
+    var isHtml5VideoPlayer, videoPlayer = document.getElementById('watch-player');
+    if (videoPlayer != null)
+    {
+      if (videoPlayer.class === 'html5-player') isHtml5VideoPlayer = true;
+    }
+    if (!isHtml5VideoPlayer)
+    {
+      var frame = document.createElement('iframe');
+      frame.style.height = '1px';
+      frame.style.width = '1px';
+      frame.setAttribute('id', 'html5formframe');
+      frame.setAttribute('src', window.location.protocol + '//' + window.location.hostname + '/html5');
+      document.body.appendChild(frame);
+  }}
+
+  function reloadVideoPage()
+  {
+    var videoPage = window.location.pathname.indexOf('/watch'),
+    html5Videos = document.getElementsByTagName('video').length;
+    if (videoPage === 0 && html5Videos === 0)
+    {
+      window.location = window.location.href;
+  }}
 
   function downloadVideoButton()
   {
