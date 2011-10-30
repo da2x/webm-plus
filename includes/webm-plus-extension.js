@@ -13,12 +13,12 @@ var oexYouTubeWebMPlus = function()
 {
   window.addEventListener('DOMContentLoaded', function()
   {
-    if (!trialParticipant() && (widget.preferences.continueTesting == 'true')) trialApplicant();
-    if (widget.preferences.videoSaveButton == 'true') downloadVideoButton();
-    if (widget.preferences.filterSearch == 'true') filterSearchResults();
-    if (widget.preferences.hideFlashPromo == 'true') removeElementById('flash10-promo-div');
-    if (widget.preferences.hideFlashUpgrade == 'true') setTimeout((function() { removeElementById('flash-upgrade'); }), 275);
-    if (widget.preferences.preventFlash == 'true') removeElementById('movie_player');
+    if (!trialParticipant() && (widget.preferences.getItem('continueTesting') === 'true')) trialApplicant();
+    if (widget.preferences.getItem('videoSaveButton') === 'true') downloadVideoButton();
+    if (widget.preferences.getItem('filterSearch') === 'true') filterSearchResults();
+    if (widget.preferences.getItem('hideFlashPromo') === 'true') removeElementById('flash10-promo-div');
+    if (widget.preferences.getItem('hideFlashUpgrade') === 'true') setTimeout((function() { removeElementById('flash-upgrade'); }), 350);
+    if (widget.preferences.getItem('preventFlash') === 'true') removeElementById('movie_player');
   }, false);
 
   function _(string)
