@@ -29,7 +29,10 @@
         removeElementById('html5testformframe');
         reloadVideoPage();
       }
-  }}, false);
+      else if (event.data === 'badHtml5VideoStatus')
+      {
+        removeElementById('html5testformframe');
+  }}}, false);
 
   window.addEventListener('DOMContentLoaded', function()
   {
