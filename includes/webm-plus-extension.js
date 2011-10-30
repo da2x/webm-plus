@@ -10,7 +10,6 @@
 // ==/UserScript==
 
 (function() {
-{
   var requestedHtml5VideoStatus = false;
 
   window.addEventListener('load', function()
@@ -105,4 +104,4 @@
       parameter.setAttribute('type', 'hidden');
       parameter.setAttribute('value', '1');
       searchField.appendChild(parameter);
-}}}}());
+}}}());
