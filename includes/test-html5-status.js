@@ -14,7 +14,7 @@
 
   function submitFormWithSessionToken()
   {
-    if (widget.preferences.continueTesting == 'true')
+    if (widget.preferences.getItem('continueTesting') === 'true')
     {
       if (form != null)
       {
