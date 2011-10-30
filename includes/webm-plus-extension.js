@@ -26,7 +26,8 @@
       }
       if (event.data === 'goodHtml5VideoStatus')
       {
-        reloadVideoPage(event.data);
+        removeElementById('html5testformframe');
+        reloadVideoPage();
       }
   }}, false);
 
@@ -83,7 +84,7 @@
       var frame = document.createElement('iframe');
       frame.style.height = '1px';
       frame.style.width = '1px';
-      frame.setAttribute('id', 'html5formframe');
+      frame.setAttribute('id', 'html5testformframe');
       frame.setAttribute('src', window.location.protocol + '//' + window.location.hostname + '/html5');
       document.body.appendChild(frame);
   }}
