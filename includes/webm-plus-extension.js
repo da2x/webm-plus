@@ -11,7 +11,6 @@
 
 (function() {
   var requestedhtml5status = false,
-  html5player = false,
   videopage = (window.location.pathname.indexOf('/watch') === 0),
   embedded = (window.location.pathname.indexOf('/embed/') === 0);
 
@@ -65,18 +64,20 @@
       var videoPlayer = document.getElementById('watch-player');
       if (videoPlayer != null)
       {
-        if (videoPlayer.class === 'html5-player') html5player = true;
+        if (videoPlayer.class === 'html5-player') return true;
       }
+      else return false;
     }
     else if (embedded)
     {
       var videoPlayer = document.getElementById('video-player');
       if (videoPlayer != null)
       {
-        if (videoPlayer.class === 'html5-video-player') html5player = true;
+        if (videoPlayer.class === 'html5-video-player') return true;
       }
+      else return false;
     }
-    else html5player = false;
+    else return false;
   }
 
   function loadHtml5VideoTestFrame()
