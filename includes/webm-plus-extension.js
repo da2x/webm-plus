@@ -62,7 +62,7 @@
   {
     if (videopage)
     {
-      var isHtml5VideoPlayer, videoPlayer = document.getElementById('watch-player');
+      var videoPlayer = document.getElementById('watch-player');
       if (videoPlayer != null)
       {
         if (videoPlayer.class === 'html5-player') html5player = true;
@@ -70,7 +70,7 @@
     }
     else if (embedded)
     {
-      var isHtml5VideoPlayer, videoPlayer = document.getElementById('video-player');
+      var videoPlayer = document.getElementById('video-player');
       if (videoPlayer != null)
       {
         if (videoPlayer.class === 'html5-video-player') html5player = true;
