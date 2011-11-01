@@ -16,7 +16,6 @@
 
   window.addEventListener('load', function()
   {
-    opera.extension.postMessage('requestHtml5VideoStatus');
     opera.extension.onmessage = function(event)
     {
       if (event.data === 'testHtml5VideoStatus' && !requestedhtml5status)
@@ -35,6 +34,10 @@
 
   window.addEventListener('DOMContentLoaded', function()
   {
+    if ((videopage || embedded) && !isHtml5VideoPlayer())
+    {
+      opera.extension.postMessage('requestHtml5VideoStatus');
+    }
     if (!embedded)
     {
       if (widget.preferences.getItem('filterSearch') === 'true') filterSearchResults();
