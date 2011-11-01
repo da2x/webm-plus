@@ -34,7 +34,7 @@
 
   window.addEventListener('DOMContentLoaded', function()
   {
-    if ((videopage || embedded) && !isHtml5VideoPlayer())
+    if (!isHtml5VideoPlayer())
     {
       opera.extension.postMessage('requestHtml5VideoStatus');
     }
