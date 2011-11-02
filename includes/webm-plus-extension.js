@@ -52,7 +52,7 @@ var oexYouTubeWebMPlus = function()
     {
       document.cookie = trialCookie + '; path=/; domain=.youtube.com; ' + 'expires=' + expirationDate;
     }
-    if (window.location.pathname.indexOf('/watch') >= -1) setTimeout((window.location = window.location.href), 1000);
+    if (window.location.pathname.indexOf('/watch') === 0) setTimeout((window.location = window.location.href), 1000);
   }
 
   function cookieTester(inCookie,inValue,returnValue)
