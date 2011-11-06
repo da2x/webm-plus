@@ -150,7 +150,7 @@
       videoid = undefined;
       if (flashplayer && flashplayer.getAttribute('flashvars'))
       {
-        videoid = flashplayer.getAttribute('flashvars').match(/(?:&video_id=)([a-z,A-Z,0-9,-]{0,200})/)[1];
+        videoid = flashplayer.getAttribute('flashvars').match(/(?:&video_id=)([a-z,A-Z,0-9,_,-]{0,200})/)[1];
         videoPlayer.removeChild(flashplayer);
         videoPlayer.appendChild(createFramePlayer(videoid));
       }
