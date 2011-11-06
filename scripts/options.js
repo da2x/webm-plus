@@ -9,10 +9,8 @@
 
     addOption('continueTesting');
     addOption('videoSaveButton');
-    addOption('filterSearch');
     addOption('neverReload');
     addOption('hideFlashPromo');
-    addOption('hideFlashUpgrade');
     addOption('preventFlash');
 
     document.getElementById('buttonOk').setAttribute('value', _('Done'));
@@ -34,10 +32,8 @@
     {
       case 'continueTesting': string = 'Rejoin the YouTube HTML5 Trial automatically'; break;
       case 'videoSaveButton': string = 'Add a ‘Download Video’ button below all WebM videos'; break;
-      case 'filterSearch': string = 'Filter search result to WebM videos only'; break;
       case 'neverReload': string = 'Never reload any embedded- or video pages'; break;
       case 'hideFlashPromo': string = 'Hide promotions for Adobe Flash'; break;
-      case 'hideFlashUpgrade': string = 'Hide upgrade warnings for Adobe Flash'; break;
       case 'preventFlash': string = 'Prevent all video playback using the Adobe Flash plug-in'; break;
     }
     return string;
@@ -61,44 +57,19 @@
 
   function saveOptionOnChange(id)
   {
-    if (id != 'preventFlash')
-    {
-      document.getElementById(id).addEventListener('change',
-      function() {
-        widget.preferences.setItem(id, ((this.checked) ? 'true' : 'false'));
-      }, false);
-    }
-    // hideFlashUpgrade option must be enabled when preventFlash is enabled
-    else if (id == 'preventFlash')
-    {
-      document.getElementById(id).addEventListener('change',
-      function() {
-        widget.preferences.setItem(id, ((this.checked) ? 'true' : 'false'));
-        var flashUpgrade = document.getElementById('hideFlashUpgrade');
-        if (this.checked == true)
-        {
-          flashUpgrade.checked = true;
-          flashUpgrade.disabled = true;
-          widget.preferences.setItem('hideFlashUpgrade', 'true');
-        }
-        else
-        {
-          flashUpgrade.disabled = false;
-        }
-      }, false);
-  }}
+    document.getElementById(id).addEventListener('change',
+    function() {
+      widget.preferences.setItem(id, ((this.checked) ? 'true' : 'false'));
+    }, false);
+  }
 
   function setOptionState(id)
   {
-    if (widget.preferences.getItem(id)) 
+    if (widget.preferences.getItem(id))
     {
       var elem = document.getElementById(id);
       elem.checked = ((widget.preferences.getItem(id) == 'true') ? true : false);
-      // hideFlashUpgrade option is disabled if preventFlash is enabled
-      if (id == 'preventFlash' && elem.checked == true)
-      {
-        document.getElementById('hideFlashUpgrade').disabled = true
-  }}}
+  }}
 
   function addOption(id)
   {
