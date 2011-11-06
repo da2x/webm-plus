@@ -10,44 +10,40 @@
 // ==/UserScript==
 
 (function() {
-  var requestedhtml5status = false,
-  videopage = (window.location.pathname.indexOf('/watch') === 0),
-  embedded = (window.location.pathname.indexOf('/embed/') === 0);
-
+  var videopage = (window.location.pathname.indexOf('/watch') === 0),
+  embedded = (window.location.pathname.indexOf('/embed/') === 0),
+  userpage = ((window.location.pathname.indexOf('/user/') === 0) || (window.location.pathname.indexOf('/profile') === 0));
   window.addEventListener('load', function()
   {
+    if (embedded) redirectEmbeddedUnlessHtml5();
     opera.extension.onmessage = function(event)
     {
-      if (event.data === 'testHtml5VideoStatus' && !requestedhtml5status)
+      if (event.data === 'testHtml5VideoStatus' && !embedded)
       {
-        loadHtml5VideoTestFrame();
+        loadHtml5TrialTestFrame();
       }
-      if (event.data === 'goodHtml5VideoStatus')
-      {
-        removeElementById('html5testformframe');
-        reloadVideoPage();
-      }
-      else if (event.data === 'badHtml5VideoStatus')
+      if (event.data === 'goodHtml5VideoStatus' || event.data === 'badHtml5VideoStatus')
       {
         removeElementById('html5testformframe');
   }}}, false);
 
   window.addEventListener('DOMContentLoaded', function()
   {
-    if (!isHtml5VideoPlayer())
+    if (videopage && !isHtml5VideoPlayer())
     {
-      opera.extension.postMessage('requestHtml5VideoStatus');
+      replaceFlashWithFramePlayer();
+      document.getElementById('watch-player').addEventListener('DOMNodeInserted', replaceFlashWithFramePlayer, false);
     }
-    if (!embedded)
+    else if (userpage && !isHtml5VideoPlayer())
     {
-      if (widget.preferences.getItem('filterSearch') === 'true') filterSearchResults();
-      if (videopage)
-      {
-        if (widget.preferences.getItem('videoSaveButton') === 'true') downloadVideoButton();
-        if (widget.preferences.getItem('hideFlashPromo') === 'true') removeElementById('flash10-promo-div');
-        if (widget.preferences.getItem('hideFlashUpgrade') === 'true') setTimeout((function() { removeElementById('flash-upgrade'); }), 350);
-        if (widget.preferences.getItem('preventFlash') === 'true') removeElementById('movie_player');
-      }
+      replaceFlashWithFramePlayer();
+      document.getElementById('playnav-player').addEventListener('DOMNodeInserted', replaceFlashWithFramePlayer, false);
+    }
+    opera.extension.postMessage('requestHtml5VideoStatus');
+    if (videopage)
+    {
+      if (widget.preferences.getItem('videoSaveButton') === 'true') downloadVideoButton();
+      if (widget.preferences.getItem('hideFlashPromo') === 'true') removeElementById('flash10-promo-div');
     }
   }, false);
 
@@ -58,6 +54,12 @@
       return oexWebMPlusi18n[string];
     }
     return string;
+  }
+
+  function removeElementById(id)
+  {
+    var element = document.getElementById(id);
+    if (element != null) element.parentNode.removeChild(element);
   }
 
   function isHtml5VideoPlayer()
@@ -80,27 +82,79 @@
       }
       else return false;
     }
+    else if (userpage)
+    {
+      var videoPlayer = document.getElementById('playnav-player');
+      if (videoPlayer != null)
+      {
+        if (videoPlayer.getElementsByTagName('video').length > 0 || videoPlayer.getElementsByTagName('iframe').length > 0)
+        {
+          return true;
+        }
+        else if (videoPlayer.getElementsByTagName('embed')[0]) return false;
+        else return false;
+      }
+      else return false;
+    }
     else return false;
   }
 
-  function loadHtml5VideoTestFrame()
+  function loadHtml5TrialTestFrame()
   {
-    requestedhtml5status = true;
-    if (!isHtml5VideoPlayer() && !embedded && widget.preferences.getItem('neverReload') === 'false')
-    {
-      var frame = document.createElement('iframe');
-      frame.style.height = '1px';
-      frame.style.width = '1px';
-      frame.setAttribute('id', 'html5testformframe');
-      frame.setAttribute('src', window.location.protocol + '//' + window.location.hostname + '/html5');
-      document.body.appendChild(frame);
-  }}
+    var iframe = document.createElement('iframe');
+    iframe.style.height = '1px';
+    iframe.style.width = '1px';
+    iframe.setAttribute('id', 'html5testformframe');
+    iframe.setAttribute('src', window.location.protocol + '//' + window.location.hostname + '/html5');
+    document.body.appendChild(iframe);
+  }
 
-  function reloadVideoPage()
+  function redirectEmbeddedUnlessHtml5()
   {
-    if ((videopage || embedded) && !isHtml5VideoPlayer())
+    if (!isHtml5VideoPlayer() && embedded)
     {
-      window.location = window.location.href;
+      if (!~window.location.href.indexOf('html5=True'))
+      {
+        if (~window.location.href.indexOf('?'))
+        {
+          window.location = window.location.href + '&html5=True'
+        }
+        else window.location = window.location.href + '?html5=True'
+  }}}
+
+  function createFramePlayer(videoid)
+  {
+    if (videoid)
+    {
+      var iframe = document.createElement('iframe');
+      iframe.style.borderWidth = '0px';
+      iframe.style.height = '100%';
+      iframe.style.width = '100%';
+      iframe.src = 'http://www.youtube.com/embed/' + videoid + '?html5=True&autoplay=1&modestbranding=1';
+      return iframe;
+    }
+    else return false; 
+  }
+
+  function replaceFlashWithFramePlayer()
+  {
+    if (document.getElementById('flash-upgrade'))
+    {
+      removeElementById('flash-upgrade');
+      document.getElementById('watch-player').appendChild(createFramePlayer(window.yt.getConfig('VIDEO_ID')));
+    }
+    else if (userpage && document.getElementById('playnav-player'))
+    {
+      var videoPlayer = document.getElementById('playnav-player'),
+      flashplayer = document.getElementById('movie_player'),
+      videoid = undefined;
+      if (flashplayer && flashplayer.getAttribute('flashvars'))
+      {
+        videoid = flashplayer.getAttribute('flashvars').match(/(?:&video_id=)([a-z,A-Z,0-9,-]{0,200})/)[1];
+        videoPlayer.removeChild(flashplayer);
+        videoPlayer.appendChild(createFramePlayer(videoid));
+      }
+      else return false;
   }}
 
   function downloadVideoButton()
@@ -118,21 +172,4 @@
       text = document.createTextNode(_('Download Video'));
       button.appendChild(text)
       container.appendChild(button);
-  }}
-
-  function removeElementById(id)
-  {
-    var element = document.getElementById(id);
-    if (element != null) element.parentNode.removeChild(element);
-  }
-
-  function filterSearchResults()
-  {
-    var parameter, searchField = document.getElementById('masthead-search');
-    if (searchField != null) {
-      parameter = document.createElement('input');
-      parameter.setAttribute('name', 'webm');
-      parameter.setAttribute('type', 'hidden');
-      parameter.setAttribute('value', '1');
-      searchField.appendChild(parameter);
 }}}());
