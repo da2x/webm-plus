@@ -5,10 +5,12 @@
   <description xml:lang="nb">Forbedre din videoopplevelse på nettet. WebM Plus lar deg lagre WebM videoer, og får YouTube til å oppføre seg som Adobe Flash bare var en dårlig drøm.</description>
   <description xml:lang="ru">Ощути преимущества открытого видео формата для Веб. С помощью этого расширения YouTube забудет об Adobe Flash навсегда. WebM Plus так же позволяет легко сохранять видео в формате WebM на диск.</description>
   <description xml:lang="uk">Відчуй переваги відкритого відео формату для Веб. За допомогою цього розширення, YouTube забуде про Adobe Flash назавжди. WebM Plus також дозволяє легко завантажувати відео у форматі WebM на диск.</description>
+  <description xml:lang="lt">Pajauskite tikrąjį internetinio video malonumą. WebM Plus leis jums išsaugoti WebM video ir leis užmirsti Adobe Flash tarsi blogą sapną</description>
   <license href="http://www.opensource.org/licenses/mit-license.php" xml:lang="en">Licensed under the MIT license. Attribution encouraged.</license>
   <license href="http://www.opensource.org/licenses/mit-license.php" xml:lang="nb">Lisensiert under MIT-lisensen. Kildehenvisning oppfordres.</license>
   <license href="http://www.opensource.org/licenses/mit-license.php" xml:lang="ru">Распространяется по лицензии MIT. Участие в проекте приветствуется.</license>
   <license href="http://www.opensource.org/licenses/mit-license.php" xml:lang="uk">Розповсюджується за ліцензією MIT. Участь у проекті заохочується.</license>
+  <license href="http://www.opensource.org/licenses/mit-license.php" xml:lang="lt">Platinama su MIT licenzija. Plėtojimas skatinamas.</license>
   <author href="http://daniel.priv.no/">Daniel Aleksandersen</author>
   <icon src="icon.png" height="64" width="64" />
   <icon src="gfx/favicon.png" height="16" width="16" />
