@@ -111,16 +111,18 @@
 
   function redirectEmbeddedUnlessHtml5()
   {
-    if (!isHtml5VideoPlayer() && embedded)
+    if (widget.preferences.getItem('redirectEmbedded') === 'true')
     {
-      if (!~window.location.href.indexOf('html5=True'))
+      if (!isHtml5VideoPlayer() && embedded)
       {
-        if (~window.location.href.indexOf('?'))
+        if (!~window.location.href.indexOf('html5=True'))
         {
-          window.location = window.location.href + '&html5=True'
-        }
-        else window.location = window.location.href + '?html5=True'
-  }}}
+          if (~window.location.href.indexOf('?'))
+          {
+            window.location = window.location.href + '&html5=True'
+          }
+          else window.location = window.location.href + '?html5=True'
+  }}}}
 
   function createFramePlayer(videoid)
   {
