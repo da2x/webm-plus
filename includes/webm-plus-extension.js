@@ -140,24 +140,26 @@
 
   function replaceFlashWithFramePlayer()
   {
-    if (document.getElementById('flash-upgrade'))
+    if (widget.preferences.getItem('alternatePlayer') === 'true')
     {
-      removeElementById('flash-upgrade');
-      document.getElementById('watch-player').appendChild(createFramePlayer(window.yt.getConfig('VIDEO_ID')));
-    }
-    else if (userpage && document.getElementById('playnav-player'))
-    {
-      var videoPlayer = document.getElementById('playnav-player'),
-      flashplayer = document.getElementById('movie_player'),
-      videoid = undefined;
-      if (flashplayer && flashplayer.getAttribute('flashvars'))
+      if (document.getElementById('flash-upgrade'))
       {
-        videoid = flashplayer.getAttribute('flashvars').match(/(?:&video_id=)([a-z,A-Z,0-9,_,-]{0,200})/)[1];
-        videoPlayer.removeChild(flashplayer);
-        videoPlayer.appendChild(createFramePlayer(videoid));
+        removeElementById('flash-upgrade');
+        document.getElementById('watch-player').appendChild(createFramePlayer(window.yt.getConfig('VIDEO_ID')));
       }
-      else return false;
-  }}
+      else if (userpage && document.getElementById('playnav-player'))
+      {
+        var videoPlayer = document.getElementById('playnav-player'),
+        flashplayer = document.getElementById('movie_player'),
+        videoid = undefined;
+        if (flashplayer && flashplayer.getAttribute('flashvars'))
+        {
+          videoid = flashplayer.getAttribute('flashvars').match(/(?:&video_id=)([a-z,A-Z,0-9,_,-]{0,200})/)[1];
+          videoPlayer.removeChild(flashplayer);
+          videoPlayer.appendChild(createFramePlayer(videoid));
+        }
+        else return false;
+  }}}
 
   function downloadVideoButton()
   {

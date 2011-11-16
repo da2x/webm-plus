@@ -9,6 +9,7 @@
 
     addOption('continueTesting');
     addOption('redirectEmbedded');
+    addOption('alternatePlayer');
     addOption('videoSaveButton');
     addOption('neverReload');
     addOption('hideFlashPromo');
@@ -35,6 +36,7 @@
     {
       case 'continueTesting': string = 'Check HTML5 Trial participation status once per session'; break;
       case 'redirectEmbedded': string = 'Request WebM for embedded videos on third-party Web sites'; break;
+      case 'alternatePlayer': string = 'Embed alternate player instead of using Flash'; break;
       case 'videoSaveButton': string = 'Add a ‘Download Video’ button below all WebM videos'; break;
       case 'neverReload': string = 'Never reload any embedded- or video pages'; break;
       case 'hideFlashPromo': string = 'Hide promotions for Adobe Flash'; break;
