@@ -18,7 +18,5 @@
   <preference name="redirectEmbedded" value="true" />
   <preference name="alternatePlayer" value="true" />
   <preference name="videoSaveButton" value="true" />
-  <preference name="neverReload" value="false" />
   <preference name="hideFlashPromo" value="true" />
-  <preference name="preventFlash" value="false" />
 </widget>

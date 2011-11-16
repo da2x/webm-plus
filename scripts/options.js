@@ -10,10 +10,8 @@
     addOption('continueTesting');
     addOption('redirectEmbedded');
     addOption('alternatePlayer');
-    addOption('videoSaveButton');
-    addOption('neverReload');
+    addOption('videoSaveButton')
     addOption('hideFlashPromo');
-    addOption('preventFlash');
 
     document.getElementById('buttonOk').setAttribute('value', _('Done'));
 
@@ -38,9 +36,7 @@
       case 'redirectEmbedded': string = 'Request WebM for embedded videos on third-party Web sites'; break;
       case 'alternatePlayer': string = 'Embed alternate player instead of using Flash'; break;
       case 'videoSaveButton': string = 'Add a ‘Download Video’ button below all WebM videos'; break;
-      case 'neverReload': string = 'Never reload any embedded- or video pages'; break;
-      case 'hideFlashPromo': string = 'Hide promotions for Adobe Flash'; break;
-      case 'preventFlash': string = 'Prevent all video playback using the Adobe Flash plug-in'; break;
+      case 'hideFlashPromo': string = 'Hide promotions for Adobe Flash Player'; break;
     }
     return string;
   }

@@ -2,8 +2,6 @@ var i18n = {
   '%widgetname options': 'Налаштування' + widget.name,
   'Rejoin the YouTube HTML5 Trial automatically': 'Автоматично приєднатися до тестової програми YouTube HTML5',
   'Add a ‘Download Video’ button below all WebM videos': 'Додати кнопку "Завантажити відео" до всіх WebM роликів',
-  'Never reload any embedded- or video pages': 'Вимкнути автоматичне оновлення сторінок з впровадженим відео',
-  'Hide promotions for Adobe Flash': 'Сховати пропозиції щодо завантаження плагіну Adobe Flash',
-  'Prevent all video playback using the Adobe Flash plug-in': 'Не програвати навіть ті ролики, що доступні лише у форматі Adobe Flash',
+  'Hide promotions for Adobe Flash Player': 'Сховати пропозиції щодо завантаження плагіну Adobe Flash Player',
   'Done': 'Готово'
 };
