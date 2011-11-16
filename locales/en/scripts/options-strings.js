@@ -1,6 +1,6 @@
 var i18n = {
   '%widgetname options': widget.name + ' options',
-  'Rejoin the YouTube HTML5 Trial automatically': 'Rejoin the YouTube HTML5 Trial automatically',
+  'Check HTML5 Trial participation status once per session': 'Check HTML5 Trial participation status once per session',
   'Add a ‘Download Video’ button below all WebM videos': 'Add a ‘Download Video’ button below all WebM videos',
   'Never reload any embedded- or video pages': 'Never reload any embedded- or video pages',
   'Hide promotions for Adobe Flash': 'Hide promotions for Adobe Flash',

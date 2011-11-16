@@ -32,7 +32,7 @@
     var string = null;
     switch (id)
     {
-      case 'continueTesting': string = 'Rejoin the YouTube HTML5 Trial automatically'; break;
+      case 'continueTesting': string = 'Check HTML5 Trial participation status once per session'; break;
       case 'videoSaveButton': string = 'Add a ‘Download Video’ button below all WebM videos'; break;
       case 'neverReload': string = 'Never reload any embedded- or video pages'; break;
       case 'hideFlashPromo': string = 'Hide promotions for Adobe Flash'; break;
