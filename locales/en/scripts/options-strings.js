@@ -5,5 +5,6 @@ var i18n = {
   'Never reload any embedded- or video pages': 'Never reload any embedded- or video pages',
   'Hide promotions for Adobe Flash': 'Hide promotions for Adobe Flash',
   'Prevent all video playback using the Adobe Flash plug-in': 'Prevent all video playback using the Adobe Flash plug-in',
-  'Done': 'Done'
+  'Done': 'Done',
+  'Open source on Github': 'Open source on Github'
 };

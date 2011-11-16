@@ -14,6 +14,8 @@
     addOption('preventFlash');
 
     document.getElementById('buttonOk').setAttribute('value', _('Done'));
+
+    document.getElementsByTagName('footer')[0].getElementsByTagName('ul')[0].getElementsByTagName('a')[0].firstChild.nodeValue=_('Open source on Github');
   }, false);
 
   function _(string)

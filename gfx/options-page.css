@@ -1,7 +1,13 @@
 html { height:100%; }
 html, body { padding:0; margin:0;}
-body { background: -o-linear-gradient(top, hsla(204,67%,93%,1) 0%,hsla(202,22%,76%,1) 36%,hsla(204,24%,88%,1) 50%,hsla(200,30%,96%,1) 95%); /* Opera11.10+ */ background: linear-gradient(top, hsla(204,67%,93%,1) 0%,hsla(202,22%,76%,1) 36%,hsla(204,24%,88%,1) 50%,hsla(200,30%,96%,1) 95%); /* W3C */ }
-section { display:block; margin: 10% auto 1%; padding:2%; width:550px; background:#fff; border-radius:10px; border:2px solid black; }
+body { background:#F0F8FF; background: -o-linear-gradient(top, hsla(204,67%,93%,1) 0%,hsla(202,22%,76%,1) 36%,hsla(204,24%,88%,1) 50%,hsla(200,30%,96%,1) 95%); /* Opera11.10+ */ background: linear-gradient(top, hsla(204,67%,93%,1) 0%,hsla(202,22%,76%,1) 36%,hsla(204,24%,88%,1) 50%,hsla(200,30%,96%,1) 95%); /* W3C */ }
+section { display:block; margin: 10% auto 0; padding:2%; width:550px; background:#fff; border-radius:10px; border:2px solid black; }
+footer { display:block; margin: 0 auto 1%; padding:2%; width:550px; background:transparent; }
+footer ul { list-style:none; padding:0; margin:0;}
+footer ul li { display:inline; font-size:.85em; }
+footer ul li :link { color:black; text-decoration:none; }
+footer ul li :link:after { content:'\2192'; color:transparent; }
+footer ul li :link:hover:after { content:'\2192'; color:blue; font-weight:bold; }
 h1 { padding-left: 80px; margin:0; background: transparent url('/icon.png') center left no-repeat; line-height: 80px;}
 form { padding-left:80px; }
 form div { display:block; line-height:2; min-height:1em; }
