@@ -1,10 +1,10 @@
 (function() {
   window.addEventListener('DOMContentLoaded', function()
   {
-    document.title = _('%widgetname options');
+    document.title = _('YouTube WebM Plus options');
 
     var heading = document.getElementsByTagName('h1')[0],
-    title = document.createTextNode(_('%widgetname options'));
+    title = document.createTextNode(_('YouTube WebM Plus options'));
     heading.appendChild(title);
 
     addOption('continueTesting');
@@ -32,11 +32,11 @@
     var string = null;
     switch (id)
     {
-      case 'continueTesting': string = 'Check HTML5 Trial participation status once per session'; break;
-      case 'redirectEmbedded': string = 'Request WebM for embedded videos on third-party Web sites'; break;
-      case 'alternatePlayer': string = 'Embed alternate player instead of using Flash'; break;
-      case 'videoSaveButton': string = 'Add a ‘Download Video’ button below all WebM videos'; break;
-      case 'hideFlashPromo': string = 'Hide promotions for Adobe Flash Player'; break;
+      case 'continueTesting': string = _('Check HTML5 Trial participation status once per session'); break;
+      case 'redirectEmbedded': string =  _('Request WebM for embedded videos on third-party Web sites'); break;
+      case 'alternatePlayer': string = _('Embed alternate player instead of using Flash'); break;
+      case 'videoSaveButton': string =  _('Add a ‘Download Video’ button below all WebM videos'); break;
+      case 'hideFlashPromo': string = _('Hide promotions for Adobe Flash Player'); break;
     }
     return string;
   }
@@ -46,7 +46,7 @@
     var option = document.createElement('div'),
     checkbox = document.createElement('input'),
     label = document.createElement('label'),
-    i18nstring = _(labelStringByOptionId(id)),
+    i18nstring = labelStringByOptionId(id),
     string = document.createTextNode(i18nstring);
     checkbox.setAttribute('type', 'checkbox');
     checkbox.setAttribute('id', id);

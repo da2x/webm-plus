@@ -1,5 +1,5 @@
 var i18n = {
-  '%widgetname options': widget.name + ' options',
+  'YouTube WebM Plus options': 'YouTube WebM Plus options',
   'Check HTML5 Trial participation status once per session': 'Check HTML5 Trial participation status once per session',
   'Request WebM for embedded videos on third-party Web sites': 'Request WebM for embedded videos on third-party Web sites',
   'Embed alternate player instead of using Flash': 'Embed alternate player instead of using Flash',
