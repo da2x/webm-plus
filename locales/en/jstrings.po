@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: scripts/options.js:38
+msgid "Add a ‘Download Video’ button below all WebM videos"
+msgstr ""
+
+#: scripts/options.js:35
+msgid "Check HTML5 Trial participation status once per session"
+msgstr ""
+
+#: includes/webm-plus-extension.js:174
+msgid "Click, then press Ctrl+S to save."
+msgstr ""
+
+#: scripts/options.js:16
+msgid "Done"
+msgstr ""
+
+#: includes/webm-plus-extension.js:176
+msgid "Download Video"
+msgstr ""
+
+#: scripts/options.js:37
+msgid "Embed alternate player instead of using Flash"
+msgstr ""
+
+#: scripts/options.js:39
+msgid "Hide promotions for Adobe Flash Player"
+msgstr ""
+
+#: scripts/options.js:18
+msgid "Open source on Github"
+msgstr ""
+
+#: scripts/options.js:36
+msgid "Request WebM for embedded videos on third-party Web sites"
+msgstr ""
+
+#: scripts/options.js:4 scripts/options.js:7
+msgid "YouTube WebM Plus options"
+msgstr ""
