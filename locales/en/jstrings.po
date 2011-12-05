@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: YouTube WebM Plus\n"
+"Report-Msgid-Bugs-To: https://github.com/zcode/webm-plus/issues\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2011-12-05 22:23+0000\n"
+"Last-Translator: zcode <daniel@daniel.priv.no>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: scripts/options.js:38
+msgid "Add a ‘Download Video’ button below all WebM videos"
+msgstr "Add a ‘Download Video’ button below all WebM videos"
+
+#: scripts/options.js:35
+msgid "Check HTML5 Trial participation status once per session"
+msgstr "Check HTML5 Trial participation status once per session"
+
+#: includes/webm-plus-extension.js:174
+msgid "Click, then press Ctrl+S to save."
+msgstr "Click, then press Ctrl+S to save."
+
+#: scripts/options.js:16
+msgid "Done"
+msgstr "Done"
+
+#: includes/webm-plus-extension.js:176
+msgid "Download Video"
+msgstr "Download Video"
+
+#: scripts/options.js:37
+msgid "Embed alternate player instead of using Flash"
+msgstr "Embed alternate player instead of using Flash"
+
+#: scripts/options.js:39
+msgid "Hide promotions for Adobe Flash Player"
+msgstr "Hide promotions for Adobe Flash Player"
+
+#: scripts/options.js:18
+msgid "Open source on Github"
+msgstr "Open source on Github"
+
+#: scripts/options.js:36
+msgid "Request WebM for embedded videos on third-party Web sites"
+msgstr "Request WebM for embedded videos on third-party Web sites"
+
+#: scripts/options.js:4 scripts/options.js:7
+msgid "YouTube WebM Plus options"
+msgstr "YouTube WebM Plus options"
+
+
