@@ -20,9 +20,9 @@
 
   function _(string)
   {
-    if (typeof(i18n) != 'undefined' && i18n[string])
+    if (typeof(oexi18n) != 'undefined' && oexi18n[string])
     {
-      return i18n[string];
+      return oexi18n[string];
     }
     return string;
   }

@@ -49,9 +49,9 @@
 
   function _(string)
   {
-    if (typeof(oexWebMPlusi18n) != 'undefined' && oexWebMPlusi18n[string])
+    if (typeof(oexi18n) != 'undefined' && oexi18n[string])
     {
-      return oexWebMPlusi18n[string];
+      return oexi18n[string];
     }
     return string;
   }
