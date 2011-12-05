@@ -12,7 +12,14 @@ sysexcludes = '.DS_Store' '__MACOSX' \
 webm-plus.oex: $(extension)
 	zip -9r ./webm-plus.oex . -i $(extension) -x $(sysexcludes)
 
-dist: webm-plus.oex
+gettext-from-js: includes/webm-plus-extension.js scripts/options.js
+	xgettext.pl includes/webm-plus-extension.js scripts/options.js -o locales/en/jstrings.po
+
+update-translations: locales/*/jstrings.po
+	@hash gettext-makejs2.pl 2>&- || { echo >&2 "I require gettext-makejs2.pl but it's not installed. Now aborting. See https://github.com/zcode/gettext-makejs2"; exit 1; }
+	(cd locales/ && export GETTEXT_MAKEJS2_SUFFIX=".i18n" && export GETTEXT_MAKEJS2_NAME="oexi18n" && gettext-makejs2.pl */jstrings.po)
+
+dist: update-translations webm-plus.oex
 
 clean:
 	rm -f ./webm-plus.oex
