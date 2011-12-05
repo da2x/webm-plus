@@ -1,4 +1,4 @@
-var oexWebMPlusi18n = {
-  'Download Video': 'Download Video',
-  'Click, then press Ctrl+S to save.': 'Click, then press Ctrl+S to save.'
-};
+var oexi18n = {
+  "Click, then press Ctrl+S to save.":"",
+  "Download Video":""
+}
