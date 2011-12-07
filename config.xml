@@ -2,6 +2,7 @@
 <widget xmlns="http://www.w3.org/ns/widgets" id="https://github.com/zcode/webm-plus" version="3.50-0" xml:lang="en">
   <name short="WebM Plus">YouTube WebM Plus</name>
   <description xml:lang="en">Enhance your open Web video experience. WebM Plus will let you save WebM videos, and make YouTube behave like Adobe Flash was just a bad dream.</description>
+  <description xml:lang="es">Mejore su forma de ver video en la Web. WebM Plus le permitira grabar videos WebM, y hara que el comportamiento de YouTube como Adobe Flash parezca un mal sueño.</description>
   <description xml:lang="nb">Forbedre din videoopplevelse på nettet. WebM Plus lar deg lagre WebM videoer, og får YouTube til å oppføre seg som Adobe Flash bare var en dårlig drøm.</description>
   <description xml:lang="ru">Ощути преимущества открытого видео формата для Веб. С помощью этого расширения YouTube забудет об Adobe Flash навсегда. WebM Plus так же позволяет легко сохранять видео в формате WebM на диск.</description>
   <description xml:lang="uk">Відчуй переваги відкритого відео формату для Веб. За допомогою цього розширення, YouTube забуде про Adobe Flash назавжди. WebM Plus також дозволяє легко завантажувати відео у форматі WebM на диск.</description>
