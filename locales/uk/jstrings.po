@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
 # Daniel  <daniel@daniel.priv.no>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: YouTube WebM Plus\n"
 "Report-Msgid-Bugs-To: https://github.com/zcode/webm-plus/issues\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2011-12-05 22:31+0000\n"
+"PO-Revision-Date: 2011-12-08 12:52+0000\n"
 "Last-Translator: zcode <daniel@daniel.priv.no>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +25,7 @@ msgstr "Додати кнопку \"Завантажити відео\" до в�
 
 #: scripts/options.js:35
 msgid "Check HTML5 Trial participation status once per session"
-msgstr ""
+msgstr "Перевіряти статус HTML5 умовно-безкоштовної участі один раз за сесію"
 
 #: includes/webm-plus-extension.js:174
 msgid "Click, then press Ctrl+S to save."
@@ -41,7 +42,7 @@ msgstr "Завантажити відео"
 
 #: scripts/options.js:37
 msgid "Embed alternate player instead of using Flash"
-msgstr ""
+msgstr "Додати альтернативний плеєр замість того щоб використовувати Flash"
 
 #: scripts/options.js:39
 msgid "Hide promotions for Adobe Flash Player"
@@ -49,11 +50,11 @@ msgstr "Сховати пропозиції щодо завантаження п
 
 #: scripts/options.js:18
 msgid "Open source on Github"
-msgstr ""
+msgstr "Відкритий код на Github"
 
 #: scripts/options.js:36
 msgid "Request WebM for embedded videos on third-party Web sites"
-msgstr ""
+msgstr "Запитати WebM для вбудованих відео на сторонніх веб-сайтах"
 
 #: scripts/options.js:4 scripts/options.js:7
 msgid "YouTube WebM Plus options"

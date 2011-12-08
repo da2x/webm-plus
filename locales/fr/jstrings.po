@@ -10,54 +10,54 @@ msgstr ""
 "Project-Id-Version: YouTube WebM Plus\n"
 "Report-Msgid-Bugs-To: https://github.com/zcode/webm-plus/issues\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2011-12-08 12:53+0000\n"
+"PO-Revision-Date: 2011-12-08 12:51+0000\n"
 "Last-Translator: zcode <daniel@daniel.priv.no>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
 #: scripts/options.js:38
 msgid "Add a ‘Download Video’ button below all WebM videos"
-msgstr "Добавить кнопку \"Скачать видео\" ко всем WebM роликами"
+msgstr ""
+"Ajouter un bouton ‘Télécharger la vidéo’ ci-dessous toutes les vidéos WebM"
 
 #: scripts/options.js:35
 msgid "Check HTML5 Trial participation status once per session"
-msgstr "Проверять статус HTML5 условно-бесплатного участия один раз за сессию"
+msgstr "Vérifier l'état du participation à l'essai HTML5 une fois par session"
 
 #: includes/webm-plus-extension.js:174
 msgid "Click, then press Ctrl+S to save."
-msgstr ""
-"Кликните на кнопке. После нажмите Ctrl+S чтобы сохранить файл на диск."
+msgstr "Cliquez, puis appuyez sur Ctrl+S pour enregistrer."
 
 #: scripts/options.js:16
 msgid "Done"
-msgstr "Готово"
+msgstr "Fait"
 
 #: includes/webm-plus-extension.js:176
 msgid "Download Video"
-msgstr "Скачать видео"
+msgstr "Télécharger la vidéo"
 
 #: scripts/options.js:37
 msgid "Embed alternate player instead of using Flash"
-msgstr "Добавить альтернативный плеер вместо того чтобы использовать Flash"
+msgstr "Intégrer lecteur de remplacement au lieu d'utiliser Flash"
 
 #: scripts/options.js:39
 msgid "Hide promotions for Adobe Flash Player"
-msgstr "Скрыть предложения о скачивании плагина Adobe Flash Player"
+msgstr "Masquer les promotions pour Adobe Flash Player"
 
 #: scripts/options.js:18
 msgid "Open source on Github"
-msgstr "Открытый код на Github"
+msgstr "Ouvrir la source sur Github"
 
 #: scripts/options.js:36
 msgid "Request WebM for embedded videos on third-party Web sites"
-msgstr "Запросить WebM для встроенных видео на сторонних веб-сайтах"
+msgstr "Demander WebM pour des vidéos intégrées sur des sites Web tiers"
 
 #: scripts/options.js:4 scripts/options.js:7
 msgid "YouTube WebM Plus options"
-msgstr "Настройки YouTube WebM Plus"
+msgstr "Options YouTube WebM Plus"
 
 

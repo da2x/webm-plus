@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" id="https://github.com/zcode/webm-plus" version="3.50-0" xml:lang="en">
   <name short="WebM Plus">YouTube WebM Plus</name>
+  <description xml:lang="zh-hans">增强您的网络视频体验。 WebM插件能够让您随心所欲的下载WebM视频，让传统的Adobe Flash不再对您束手束脚。</description>
+  <description xml:lang="zh-hant">增強您的網絡視頻體驗。 WebM插件能夠讓您隨心所欲的下載WebM視頻，讓傳統的Adobe Flash不再對您束手束腳。</description>
   <description xml:lang="en">Enhance your open Web video experience. WebM Plus will let you save WebM videos, and make YouTube behave like Adobe Flash was just a bad dream.</description>
   <description xml:lang="es">Mejore su forma de ver video en la Web. WebM Plus le permitira grabar videos WebM, y hara que el comportamiento de YouTube como Adobe Flash parezca un mal sueño.</description>
+  <description xml:lang="fr">Améliorez votre expérience vidéo sur le Web ouvert. WebM Plus vous permettra de sauvegarder des vidéos WebM, et de faire de YouTube se comporter comme Adobe Flash était juste un mauvais rêve.</description>
+  <description xml:lang="lt">Pajauskite tikrąjį internetinio video malonumą. WebM Plus leis jums išsaugoti WebM video ir leis užmirsti Adobe Flash tarsi blogą sapną</description>
   <description xml:lang="nb">Forbedre din videoopplevelse på nettet. WebM Plus lar deg lagre WebM videoer, og får YouTube til å oppføre seg som Adobe Flash bare var en dårlig drøm.</description>
   <description xml:lang="ru">Ощути преимущества открытого видео формата для Веб. С помощью этого расширения YouTube забудет об Adobe Flash навсегда. WebM Plus так же позволяет легко сохранять видео в формате WebM на диск.</description>
   <description xml:lang="uk">Відчуй переваги відкритого відео формату для Веб. За допомогою цього розширення, YouTube забуде про Adobe Flash назавжди. WebM Plus також дозволяє легко завантажувати відео у форматі WebM на диск.</description>
-  <description xml:lang="lt">Pajauskite tikrąjį internetinio video malonumą. WebM Plus leis jums išsaugoti WebM video ir leis užmirsti Adobe Flash tarsi blogą sapną</description>
   <license href="http://www.opensource.org/licenses/mit-license.php" xml:lang="en">Licensed under the MIT license. Attribution encouraged.</license>
-  <license href="http://www.opensource.org/licenses/mit-license.php" xml:lang="nb">Lisensiert under MIT-lisensen. Kildehenvisning oppfordres.</license>
-  <license href="http://www.opensource.org/licenses/mit-license.php" xml:lang="ru">Распространяется по лицензии MIT. Участие в проекте приветствуется.</license>
-  <license href="http://www.opensource.org/licenses/mit-license.php" xml:lang="uk">Розповсюджується за ліцензією MIT. Участь у проекті заохочується.</license>
-  <license href="http://www.opensource.org/licenses/mit-license.php" xml:lang="lt">Platinama su MIT licenzija. Plėtojimas skatinamas.</license>
-  <author href="http://daniel.priv.no/">Daniel Aleksandersen</author>
+  <author href="http://web.daniel.priv.no/">Daniel Aleksandersen</author>
   <icon src="icon.png" height="64" width="64" />
   <icon src="gfx/favicon.png" height="16" width="16" />
   <preference name="continueTesting" value="true" />
