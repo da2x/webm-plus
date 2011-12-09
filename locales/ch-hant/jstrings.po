@@ -10,26 +10,26 @@ msgstr ""
 "Project-Id-Version: YouTube WebM Plus\n"
 "Report-Msgid-Bugs-To: https://github.com/zcode/webm-plus/issues\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2011-12-08 13:09+0000\n"
-"Last-Translator: zcode <daniel@daniel.priv.no>\n"
+"PO-Revision-Date: 2011-12-08 13:11+0000\n"
+"Last-Translator: zcode <i18n@daniel.priv.no>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
+"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
 #: scripts/options.js:38
 msgid "Add a ‘Download Video’ button below all WebM videos"
-msgstr "在所有WebM视频下方都增加一个\"下载视频\"按钮。"
+msgstr "在所有WebM視頻下方都增加一個\"下載視頻\"按鈕。"
 
 #: scripts/options.js:35
 msgid "Check HTML5 Trial participation status once per session"
-msgstr "每个会话都检查HTML5的体验参与(trial participation)的状态"
+msgstr "每個會話都檢查HTML5的體驗參與(trial participation)的狀態"
 
 #: includes/webm-plus-extension.js:174
 msgid "Click, then press Ctrl+S to save."
-msgstr "先点击，然后按Ctrl+S进行保存"
+msgstr "先點擊，然後按Ctrl+S進行保存。"
 
 #: scripts/options.js:16
 msgid "Done"
@@ -37,7 +37,7 @@ msgstr "完成"
 
 #: includes/webm-plus-extension.js:176
 msgid "Download Video"
-msgstr "下载视频"
+msgstr "下載視頻"
 
 #: scripts/options.js:37
 msgid "Embed alternate player instead of using Flash"
@@ -45,18 +45,18 @@ msgstr "使用嵌入式播放器，不使用Flash"
 
 #: scripts/options.js:39
 msgid "Hide promotions for Adobe Flash Player"
-msgstr "隐藏Adobe Flash Player的广告"
+msgstr "隱藏Adobe Flash Player的廣告"
 
 #: scripts/options.js:18
 msgid "Open source on Github"
-msgstr "本项目已经在Github上开源"
+msgstr "本項目已經在Github上開源"
 
 #: scripts/options.js:36
 msgid "Request WebM for embedded videos on third-party Web sites"
-msgstr "申请为第三方站点的视频使用WebM插件。"
+msgstr "申請爲第三方站點的視頻使用WebM插件。"
 
 #: scripts/options.js:4 scripts/options.js:7
 msgid "YouTube WebM Plus options"
-msgstr "YouTube WebM插件的选项"
+msgstr "YouTube WebM插件的選項"
 
 

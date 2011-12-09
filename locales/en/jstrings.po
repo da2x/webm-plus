@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: YouTube WebM Plus\n"
 "Report-Msgid-Bugs-To: https://github.com/zcode/webm-plus/issues\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2011-12-05 22:23+0000\n"
-"Last-Translator: zcode <daniel@daniel.priv.no>\n"
+"Last-Translator: zcode <i18n@daniel.priv.no>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

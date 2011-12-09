@@ -1,0 +1,26 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Translators:
+# Daniel  <daniel@daniel.priv.no>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: YouTube WebM Plus\n"
+"Report-Msgid-Bugs-To: https://github.com/zcode/webm-plus/issues\n"
+"PO-Revision-Date: 2011-12-09 15:14+0000\n"
+"Last-Translator: zcode <i18n@daniel.priv.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#: config.xml
+msgid ""
+"Enhance your open Web video experience. WebM Plus will let you save WebM "
+"videos, and make YouTube behave like Adobe Flash was just a bad dream."
+msgstr "增强您的网络视频体验。 WebM插件能够让您随心所欲的下载WebM视频，让传统的Adobe Flash不再对您束手束脚。"
+
+
