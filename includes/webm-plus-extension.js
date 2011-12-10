@@ -170,7 +170,7 @@
     {
       button.setAttribute('class', 'yt-uix-button yt-uix-tooltip yt-uix-tooltip-reverse');
       button.style.position = 'relative';
-      button.style.top = '-4px';
+      button.style.top = '-6px';
       button.setAttribute('data-tooltip-text', _('Click, then press Ctrl+S to save.'));
       button.onclick = function() { window.location = video[0].src; }
       text = document.createTextNode(_('Download Video'));
