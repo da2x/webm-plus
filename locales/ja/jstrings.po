@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Translators:
+# Translators:
+# Daniel  <i18n@daniel.priv.no>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: YouTube WebM Plus\n"
+"Report-Msgid-Bugs-To: https://github.com/zcode/webm-plus/issues\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2011-12-14 01:09+0000\n"
+"Last-Translator: zcode <i18n@daniel.priv.no>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#: scripts/options.js:38
+msgid "Add a ‘Download Video’ button below all WebM videos"
+msgstr "ずべてのWebM動画の下に「動画のダウンロード」のボタンを表示する。"
+
+#: scripts/options.js:35
+msgid "Check HTML5 Trial participation status once per session"
+msgstr "恪セッションごとに一回HTML5試験の参加状況を確認する。"
+
+#: includes/webm-plus-extension.js:174
+msgid "Click, then press Ctrl+S to save."
+msgstr "保存するには選択して、Ctrl-Sを押します。"
+
+#: scripts/options.js:16
+msgid "Done"
+msgstr "終了"
+
+#: includes/webm-plus-extension.js:176
+msgid "Download Video"
+msgstr "ビデオのダウンロード"
+
+#: scripts/options.js:37
+msgid "Embed alternate player instead of using Flash"
+msgstr "Flashを使用の変わりに代替プレーヤーをエンベッドする。"
+
+#: scripts/options.js:39
+msgid "Hide promotions for Adobe Flash Player"
+msgstr "Adobe Flash プレヤーのCMを隠す。"
+
+#: scripts/options.js:18
+msgid "Open source on Github"
+msgstr "Github上でオーペンソース"
+
+#: scripts/options.js:36
+msgid "Request WebM for embedded videos on third-party Web sites"
+msgstr "第三者ウェブサイトのエンベッドせれた動画に関しては、WebM阪を要求する。"
+
+#: scripts/options.js:4 scripts/options.js:7
+msgid "YouTube WebM Plus options"
+msgstr "YouTube WebM Plusの設定"
+
+
