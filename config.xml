@@ -15,7 +15,7 @@
   <author href="http://web.daniel.priv.no/">Daniel Aleksandersen</author>
   <icon src="icon.png" height="64" width="64" />
   <icon src="gfx/favicon.png" height="16" width="16" />
-  <preference name="continueTesting" value="true" />
+  <preference name="continueTesting" value="false" />
   <preference name="redirectEmbedded" value="true" />
   <preference name="alternatePlayer" value="true" />
   <preference name="videoSaveButton" value="true" />
