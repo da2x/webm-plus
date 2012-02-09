@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Translators:
+# Translators:
+# Chris Toph D <>, 2012.
+# Daniel  <i18n@daniel.priv.no>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: YouTube WebM Plus\n"
+"Report-Msgid-Bugs-To: https://github.com/zcode/webm-plus/issues\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2012-02-09 22:20+0000\n"
+"Last-Translator: Daniel <i18n@daniel.priv.no>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: scripts/options.js:38
+msgid "Add a ‘Download Video’ button below all WebM videos"
+msgstr "Füge einen »Video Downloaden« Button unter allen WebM-Videos hinzu"
+
+#: scripts/options.js:35
+msgid "Check HTML5 Trial participation status once per session"
+msgstr "Überprüfe den HTML5-Test Teilnehmer-Status einmal pro Sitzung"
+
+#: includes/webm-plus-extension.js:174
+msgid "Click, then press Ctrl+S to save."
+msgstr "Klicken, dann Strg+S zum Speichern drücken"
+
+#: scripts/options.js:16
+msgid "Done"
+msgstr "Fertig"
+
+#: includes/webm-plus-extension.js:176
+msgid "Download Video"
+msgstr "Video herunterladen"
+
+#: scripts/options.js:37
+msgid "Embed alternate player instead of using Flash"
+msgstr "Alternativen Player einbinden statt Flash zu benutzen"
+
+#: scripts/options.js:39
+msgid "Hide promotions for Adobe Flash Player"
+msgstr "Werbung für den Adobe Flash Player ausblenden"
+
+#: scripts/options.js:18
+msgid "Open source on Github"
+msgstr "Öffne die Quell-Datei auf Github"
+
+#: scripts/options.js:36
+msgid "Request WebM for embedded videos on third-party Web sites"
+msgstr ""
+"Bevorzuge WebM für eingebettete Videos auf Webseiten von Drittanbietern"
+
+#: scripts/options.js:4 scripts/options.js:7
+msgid "YouTube WebM Plus options"
+msgstr "YouTube WebM Plus Einstellungen"
+
+
