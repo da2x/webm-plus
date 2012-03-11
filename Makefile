@@ -1,6 +1,6 @@
 all: dist
 
-extension = config.xml index.html options.html \
+extension = config.xml webm-plus.html options.html \
             includes/*.js scripts/*.js \
             gfx/*.css gfx/*.png icon.png \
             COPYING \
