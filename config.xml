@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" id="https://github.com/zcode/webm-plus" version="3.51-2" xml:lang="en" defaultlocale="en">
+  <content src="webm-plus.html" type="text/html" />
   <name short="WebM Plus">YouTube WebM Plus</name>
   <description xml:lang="zh-hans">增强您的网络视频体验。 WebM插件能够让您随心所欲的下载WebM视频，让传统的Adobe Flash不再对您束手束脚。</description>
   <description xml:lang="zh-hant">增強您的網絡視頻體驗。 WebM插件能夠讓您隨心所欲的下載WebM視頻，讓傳統的Adobe Flash不再對您束手束腳。</description>
