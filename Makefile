@@ -3,7 +3,7 @@ all: dist
 extension = config.xml index.html options.html \
             includes/*.js scripts/*.js \
             gfx/*.css gfx/*.png icon.png \
-            LICENSE \
+            COPYING \
             locales/*/*/*.js
 
 sysexcludes = '.DS_Store' '__MACOSX' \
