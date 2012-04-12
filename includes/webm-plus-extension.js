@@ -118,16 +118,18 @@
   {
     if (widget.preferences.getItem('alternatePlayer') === 'true')
     {
-      if (document.getElementById('flash-upgrade'))
+      var player = document.getElementById('watch-player'),
+        flash = document.getElementById('movie_player');
+      if (flash || (document.getElementById('flash-upgrade')))
       {
-        removeElementById('flash-upgrade');
+        removeElementById('movie_player');
         document.getElementById('watch-player').appendChild(createFramePlayer(window.yt.getConfig('VIDEO_ID')));
       }
       else if (userpage && document.getElementById('playnav-player'))
       {
         var videoPlayer = document.getElementById('playnav-player'),
-        flashplayer = document.getElementById('movie_player'),
-        videoid = undefined;
+          flashplayer = document.getElementById('movie_player'),
+          videoid = undefined;
         if (flashplayer && flashplayer.getAttribute('flashvars'))
         {
           videoid = flashplayer.getAttribute('flashvars').match(/(?:&video_id=)([a-z,A-Z,0-9,_,-]{0,200})/)[1];
@@ -135,6 +137,10 @@
           videoPlayer.appendChild(createFramePlayer(videoid));
         }
         else return false;
+      }
+      if (document.getElementById('flash-upgrade'))
+      {
+        removeElementById('flash-upgrade');
   }}}
 
   function downloadVideoButton()
