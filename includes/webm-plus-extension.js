@@ -13,19 +13,6 @@
   var videopage = (window.location.pathname.indexOf('/watch') === 0),
   embedded = (window.location.pathname.indexOf('/embed/') === 0),
   userpage = ((window.location.pathname.indexOf('/user/') === 0) || (window.location.pathname.indexOf('/profile') === 0));
-  window.addEventListener('load', function()
-  {
-    if (embedded) redirectEmbeddedUnlessHtml5();
-    opera.extension.onmessage = function(event)
-    {
-      if (event.data === 'testHtml5VideoStatus' && !embedded)
-      {
-        loadHtml5TrialTestFrame();
-      }
-      if (event.data === 'goodHtml5VideoStatus' || event.data === 'badHtml5VideoStatus')
-      {
-        removeElementById('html5testformframe');
-  }}}, false);
 
   window.addEventListener('DOMContentLoaded', function()
   {
@@ -39,7 +26,6 @@
       replaceFlashWithFramePlayer();
       document.getElementById('playnav-player').addEventListener('DOMNodeInserted', replaceFlashWithFramePlayer, false);
     }
-    opera.extension.postMessage('requestHtml5VideoStatus');
     if (videopage)
     {
       if (widget.preferences.getItem('videoSaveButton') === 'true') downloadVideoButton();
@@ -97,16 +83,6 @@
       else return false;
     }
     else return false;
-  }
-
-  function loadHtml5TrialTestFrame()
-  {
-    var iframe = document.createElement('iframe');
-    iframe.style.height = '1px';
-    iframe.style.width = '1px';
-    iframe.setAttribute('id', 'html5testformframe');
-    iframe.setAttribute('src', window.location.protocol + '//' + window.location.hostname + '/html5');
-    document.body.appendChild(iframe);
   }
 
   function redirectEmbeddedUnlessHtml5()
