@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" id="https://github.com/zcode/webm-plus" version="3.54-1" xml:lang="en" defaultlocale="en">
+<widget xmlns="http://www.w3.org/ns/widgets" id="https://github.com/Aeyoun/webm-plus" version="3.54-1" xml:lang="en" defaultlocale="en">
   <content src="webm-plus.html" type="text/html" />
   <name short="WebM Plus">YouTube WebM Plus</name>
   <description xml:lang="zh-hans">增强您的网络视频体验。 WebM插件能够让您随心所欲的下载WebM视频，让传统的Adobe Flash不再对您束手束脚。</description>
@@ -13,7 +13,7 @@
   <description xml:lang="pt-br">Melhore sua experiência com o formato de vídeo aberto Web. WebM Plus torna possível que você salve vídeos WebM, e faça com que o YouTube comportando-se como o Adobe Flash ser apenas um sonho ruim.</description>
   <description xml:lang="ru">Ощути преимущества открытого видео формата для Веб. С помощью этого расширения YouTube забудет об Adobe Flash навсегда. WebM Plus так же позволяет легко сохранять видео в формате WebM на диск.</description>
   <description xml:lang="uk">Відчуй переваги відкритого відео формату для Веб. За допомогою цього розширення, YouTube забуде про Adobe Flash назавжди. WebM Plus також дозволяє легко завантажувати відео у форматі WebM на диск.</description>
-  <license href="COPYING" xml:lang="en">Licensed under the MIT license.</license>
+  <license href="https://raw.github.com/Aeyoun/webm-plus/master/COPYING" xml:lang="en">Licensed under the MIT license.</license>
   <author href="http://web.daniel.priv.no/">Daniel Aleksandersen</author>
   <icon src="icon.png" height="64" width="64" />
   <icon src="gfx/favicon.png" height="16" width="16" />
